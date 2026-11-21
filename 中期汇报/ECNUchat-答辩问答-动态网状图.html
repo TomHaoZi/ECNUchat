@@ -18,8 +18,8 @@
   .legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 8px 26px; font-size: 12.5px; color: #6B5F49; background: #FFFDF8; border-bottom: 1px solid #E7DFCF; }
   .legend span::before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
   .lg-c::before { background: #A61E36; } .lg-g::before { background: #1D6FB8; } .lg-q::before { background: #fff; border: 2px solid #0E8A5F; width: 8px; height: 8px; } .lg-t::before { background: #F3E3BC; border: 1.5px solid #B45309; width: 8.5px; height: 8.5px; }
-  main.mapwrap { display: flex; align-items: stretch; }
-  #graphWrap { flex: 1 1 auto; min-width: 0; height: calc(100vh - 178px); min-height: 620px; background: radial-gradient(circle at 50% 42%, #FFFDF8 0%, #F7F1E5 78%); position: relative; overflow: hidden; }
+  main.mapwrap { display: flex; flex-direction: column; }
+  #graphWrap { flex: none; width: 100%; height: 64vh; min-height: 520px; background: radial-gradient(circle at 50% 42%, #FFFDF8 0%, #F7F1E5 78%); position: relative; overflow: hidden; }
   #graphWrap:fullscreen { height: 100vh; }
   svg#map { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
   svg#map:active { cursor: grabbing; }
@@ -35,7 +35,11 @@
   .node.sel circle.core { stroke-width: 4.5; }
   .pulse { fill: none; stroke: #A61E36; stroke-width: 2; opacity: .5; animation: pulse 2.6s ease-out infinite; }
   @keyframes pulse { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.9); opacity: 0; } }
-  aside#panel { flex: 0 0 402px; max-width: 402px; background: #FFFDF8; border-left: 1px solid #E7DFCF; padding: 20px 22px; position: sticky; top: 104px; height: calc(100vh - 104px); overflow-y: auto; }
+  aside#panel { background: #FFFDF8; border-top: 3px solid #A61E36; padding: 16px 26px 26px; scroll-margin-top: 108px; }
+  .phead { max-width: 1060px; margin: 0 auto 6px; font-size: 15px; font-weight: 800; color: #A61E36; }
+  .phead small { font-weight: 400; color: #8A7D63; font-size: 12.5px; margin-left: 8px; }
+  #panelBody { max-width: 1060px; margin: 0 auto; }
+  aside#panel .jump { color: #1D6FB8; cursor: pointer; text-decoration: underline; font-size: 13px; }
   aside#panel h2 { font-size: 17px; margin: 8px 0 10px; line-height: 1.5; }
   aside#panel .tag { display: inline-block; color: #fff; font-size: 12px; padding: 2.5px 10px; border-radius: 20px; }
   aside#panel .tag.term { background: #B45309; }
@@ -85,7 +89,7 @@
 </div>
 <main class="mapwrap">
   <div id="graphWrap"><svg id="map" xmlns="http://www.w3.org/2000/svg"><g id="world"></g></svg></div>
-  <aside id="panel"><div class="empty">点图上任意一个节点，这里显示它的详解：<br><br>· <b>问题节点</b>：一句话版 + 完整版 + 关联问题 + 涉及的名词<br>· <b>名词节点</b>：一句人话 + 在本项目里指什么 + 出现在哪几道题<br>· <b>分组节点</b>：这一组的题目列表<br><br>操作：拖动节点能把它拽开；滚轮缩放；拖空白处平移；鼠标悬停会点亮它的邻居。</div></aside>
+  <aside id="panel"><div class="phead">节点详解<small>点图上的任意节点，完整问题和详细回答就显示在这一节</small></div><div id="panelBody"><div class="empty">点图上任意一个节点，这里显示它的详解：<br><br>· <b>问题节点</b>：一句话版 + 完整版 + 关联问题 + 涉及的名词<br>· <b>名词节点</b>：一句人话 + 在本项目里指什么 + 出现在哪几道题<br>· <b>分组节点</b>：这一组的题目列表<br><br>操作：拖动节点能把它拽开；滚轮缩放；拖空白处平移；鼠标悬停会点亮它的邻居。</div></div></aside>
 </main>
 <section class="listwrap">
   <h2 class="title">全部 36 题清单（完整版）</h2>
@@ -363,7 +367,7 @@ svg.addEventListener('pointerup', ev => {
 });
 // ---- focus & panel ----
 let selected = null;
-const panel = document.getElementById('panel');
+const panel = document.getElementById('panelBody');
 function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 function neighbors(id) { const s = new Set([id]); edges.forEach(e => { if (e.a.id === id) s.add(e.b.id); if (e.b.id === id) s.add(e.a.id); }); return s; }
 function focus(id, hover) {
@@ -401,7 +405,17 @@ function select(id) {
   } else {
     panel.innerHTML = '<span class="tag" style="background:#A61E36">中心</span><h2>ECNUchat 答辩 36 问</h2><div class="full">从这里往外：5 个分组 → 36 道题 → 49 个名词。点任意节点看详解，拖动可以把挤在一起的节点拽开，滚轮缩放看局部。</div>';
   }
+  if (o.type === 'q') {
+    const d = document.createElement('div');
+    d.style.marginTop = '12px';
+    d.innerHTML = '<span class="jump">↓ 在下方完整清单里看这一题</span>';
+    panel.appendChild(d);
+    d.querySelector('.jump').addEventListener('click', () => document.getElementById('q' + o.n).scrollIntoView({ behavior: 'smooth' }));
+  }
   panel.querySelectorAll('[data-sel]').forEach(c => c.addEventListener('click', () => { select(c.dataset.sel); panTo(byId[c.dataset.sel]); }));
+  const pa = document.getElementById('panel');
+  const r = pa.getBoundingClientRect();
+  if (r.top >= window.innerHeight || r.bottom <= 0) pa.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 function panTo(o) { if (!o) return; const r = wrap.getBoundingClientRect(); view.tx = r.width / 2 - o.x * view.s; view.ty = r.height / 2 - o.y * view.s; applyView(); }
 // ---- toolbar ----
