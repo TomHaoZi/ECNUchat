@@ -20,6 +20,10 @@ per share, 50,000,000 shares offered, approximately $18.0 billion market
 capitalization at the $30.00 midpoint, net proceeds of approximately $1,377.0
 million.
 
+`ECNUchat-Nasdaq-Introduction.pptx` — the company introduction presentation for
+the listing (12 slides; native, fully editable PowerPoint text, shapes and
+tables throughout).
+
 `logo-options/` holds the four minimalist logo redesign directions that were
 considered (A: bubble tile, B: red circle badge, C: black squircle — selected,
 D: outline ring).
