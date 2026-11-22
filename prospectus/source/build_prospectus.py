@@ -12,7 +12,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
                                 Spacer, Table, TableStyle, PageBreak, Image,
                                 KeepTogether, HRFlowable)
-import content_a, content_b, content_c
+import content_a, content_b, content_c, content_d
 
 FDIR = "/usr/share/fonts/truetype/noto/"
 pdfmetrics.registerFont(TTFont("Serif", FDIR + "NotoSerif-Regular.ttf"))
@@ -72,7 +72,11 @@ def cover_footer(canvas, doc):
 def render_blocks(blocks, story):
     for b in blocks:
         kind = b[0]
-        if kind == "h1":
+        if kind == "h1x":
+            story.append(PageBreak()); story.append(Paragraph(b[1], S["h1"]))
+            story.append(HRFlowable(width="100%", thickness=0.8, color=NAVY,
+                                    spaceAfter=10))
+        elif kind == "h1":
             p = Paragraph(b[1], S["h1"]); p._is_h1 = True
             story.append(PageBreak()); story.append(p)
             story.append(HRFlowable(width="100%", thickness=0.8, color=NAVY,
@@ -185,12 +189,18 @@ def make_story(toc_pages=None):
     for mod in (content_a, content_b, content_c):
         for title, blocks in mod.SECTIONS:
             render_blocks([("h1", title)] + blocks, story)
+    # ---------- END OF PART I: DEALER OBLIGATION, THEN PART II ----------
+    render_blocks(content_d.DEALER, story)
+    story.append(PageBreak())
+    render_blocks(content_d.PARTII_INTRO, story)
+    render_blocks(content_d.ITEMS, story)
+    render_blocks(content_d.SIGNATURES, story)
     return story
 
 def build(out):
     doc = Doc(out, pagesize=LETTER, leftMargin=0.95 * inch, rightMargin=0.95 * inch,
               topMargin=0.8 * inch, bottomMargin=0.8 * inch,
-              title="ECNUchat, Inc. — Preliminary Prospectus",
+              title="ECNUchat, Inc. — Nasdaq Prospectus (Form S-1)",
               author="ECNUchat, Inc.")
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="f")
     doc.addPageTemplates([PageTemplate(id="all", frames=[frame], onPage=footer)])
@@ -199,11 +209,11 @@ def build(out):
     SECTION_PAGES.clear()
     doc2 = Doc(out, pagesize=LETTER, leftMargin=0.95 * inch, rightMargin=0.95 * inch,
                topMargin=0.8 * inch, bottomMargin=0.8 * inch,
-               title="ECNUchat, Inc. — Preliminary Prospectus",
+               title="ECNUchat, Inc. — Nasdaq Prospectus (Form S-1)",
                author="ECNUchat, Inc.")
     doc2.addPageTemplates([PageTemplate(id="all", frames=[frame], onPage=footer)])
     doc2.build(make_story(toc_pages=pages))
     print("built:", out)
 
 if __name__ == "__main__":
-    build("/home/hatch/workspace/ecnuchat-prospectus/ECNUchat-Prospectus.pdf")
+    build("/home/hatch/workspace/ecnuchat-prospectus/ECNUchat-Nasdaq-Prospectus.pdf")

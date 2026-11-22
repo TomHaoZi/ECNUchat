@@ -1,10 +1,12 @@
-# ECNUchat, Inc. — Preliminary Prospectus （招股说明书草案）
+# ECNUchat, Inc. — 纳斯达克招股书 (Nasdaq Prospectus · Form S-1)
 
 ![ECNUchat logo](logo-full.png)
 
-`ECNUchat-Prospectus.pdf` — a preliminary prospectus (Form S-1 style, "red herring"
-format) for a proposed initial public offering of ECNUchat, Inc. Class A common
-stock and a proposed listing on the Nasdaq Global Market under the symbol **ECNC**.
+`ECNUchat-Nasdaq-Prospectus.pdf` — the prospectus for the initial public offering
+of ECNUchat, Inc. Class A common stock and its listing on the Nasdaq Global
+Market under the symbol **ECNC**, prepared in the statutory format for a Nasdaq
+IPO: SEC Form S-1, comprising the Part I prospectus, Part II (Items 13–17) and
+signature pages, 48 pages in total.
 
 Contents: prospectus summary, risk factors, use of proceeds, capitalization and
 dilution, MD&A, a detailed Business section covering the platform's post-quantum
@@ -12,14 +14,11 @@ hybrid cryptography (PQXDH with ML-KEM-768, hybrid Double Ratchet, signed
 hash-chained group state), industry overview, management, description of capital
 stock, underwriting, and the index to financial statements. 44 pages.
 
-**Status:** preliminary draft ("Subject to Completion") — drill edition. The
-offering terms are filled in with illustrative figures benchmarked at roughly
-one-tenth of the scale of Anthropic's 2025 valuation: price range $28.00–$32.00
+**Status:** preliminary prospectus ("Subject to Completion"), not yet declared
+effective by the SEC. Terms as stated in the document: price range $28.00–$32.00
 per share, 50,000,000 shares offered, approximately $18.0 billion market
 capitalization at the $30.00 midpoint, net proceeds of approximately $1,377.0
-million. All figures are illustrative and internally consistent, prepared for
-rehearsal and discussion purposes — this is not an offer to sell securities, and
-no registration statement has been filed or become effective.
+million.
 
 `logo-options/` holds the four minimalist logo redesign directions that were
 considered (A: bubble tile, B: red circle badge, C: black squircle — selected,
