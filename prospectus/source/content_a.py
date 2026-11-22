@@ -2,17 +2,17 @@
 """Front matter, summary, and offering sections."""
 
 COVER_PARAS = [
- "This is the initial public offering of shares of Class A common stock of ECNUchat, Inc. We are offering [•] shares of our Class A common stock. Prior to this offering, there has been no public market for our Class A common stock. The initial public offering price is expected to be between $[•] and $[•] per share. See “Underwriting” for additional information regarding the terms of this offering.",
+ "This is the initial public offering of shares of Class A common stock of ECNUchat, Inc. We are offering 50,000,000 shares of our Class A common stock. Prior to this offering, there has been no public market for our Class A common stock. The initial public offering price is expected to be between $28.00 and $32.00 per share. See “Underwriting” for additional information regarding the terms of this offering.",
  "We have two classes of common stock outstanding: Class A common stock and Class B common stock. The rights of the holders of Class A common stock and Class B common stock are identical, except with respect to voting and conversion. Each share of Class A common stock is entitled to one vote per share. Each share of Class B common stock is entitled to ten votes per share and is convertible into one share of Class A common stock at any time at the option of the holder or upon certain transfers. Our founders hold all of our outstanding Class B common stock and will, following this offering, continue to control a majority of the voting power of our outstanding capital stock. See “Description of Capital Stock.”",
  "We are an “emerging growth company” as defined under the federal securities laws. As an emerging growth company, we may take advantage of certain exemptions from various reporting requirements that are applicable to other public companies, including reduced disclosure obligations regarding executive compensation and exemptions from the auditor attestation requirements of Section 404 of the Sarbanes-Oxley Act of 2002. See “Risk Factors” and “Management’s Discussion and Analysis of Financial Condition and Results of Operations.”",
- "The underwriters have an option, exercisable within 30 days from the date of this prospectus, to purchase up to an additional [•] shares of Class A common stock from us at the initial public offering price, less underwriting discounts and commissions, solely to cover over-allotments, if any.",
+ "The underwriters have an option, exercisable within 30 days from the date of this prospectus, to purchase up to an additional 7,500,000 shares of Class A common stock from us at the initial public offering price, less underwriting discounts and commissions, solely to cover over-allotments, if any.",
 ]
 
 COVER_TABLE = [("table", [
  ["", "Per Share", "Total"],
- ["Public offering price", "$[•]", "$[•]"],
- ["Underwriting discounts and commissions", "$[•]", "$[•]"],
- ["Proceeds, before expenses, to us", "$[•]", "$[•]"],
+ ["Public offering price", "$30.00", "$1,500,000,000"],
+ ["Underwriting discounts and commissions", "$2.10", "$105,000,000"],
+ ["Proceeds, before expenses, to us", "$27.90", "$1,395,000,000"],
 ], [3.4 * 72, 1.3 * 72, 1.3 * 72])]
 
 INSIDE_FRONT = [
@@ -84,28 +84,28 @@ SECTIONS += [("PROSPECTUS SUMMARY", [
  ("bullet", "Encryption technologies are subject to evolving and sometimes conflicting regulation, export controls and lawful-access demands across jurisdictions, including in China, where our principal operations are located."),
  ("bullet", "Our dual-class capital structure concentrates voting control with our founders, and our Class A common stock has no prior public market and may be volatile."),
  ("h2", "Corporate Information"),
- ("p", "We were incorporated in the State of Delaware in 2026 under the name ECNUchat, Inc., to hold and commercialize the ECNUchat platform, which was originally developed as an academic research project in applied cryptography. Our principal executive offices are located in Shanghai, China. Our website address is [•]. The information contained on, or accessible through, our website is not a part of this prospectus. We are an “emerging growth company” and, as such, have elected to comply with certain reduced public company disclosure requirements."),
+ ("p", "We were incorporated in the State of Delaware in 2026 under the name ECNUchat, Inc., to hold and commercialize the ECNUchat platform, which was originally developed as an academic research project in applied cryptography. Our principal executive offices are located in Shanghai, China. Our website address is www.ecnuchat.com. The information contained on, or accessible through, our website is not a part of this prospectus. We are an “emerging growth company” and, as such, have elected to comply with certain reduced public company disclosure requirements."),
  ("h2", "The Offering"),
  ("table", [
   ["", ""],
-  ["Class A common stock offered by us", "[•] shares"],
-  ["Option to purchase additional shares", "The underwriters have an option, exercisable for 30 days, to purchase up to [•] additional shares of Class A common stock from us solely to cover over-allotments, if any."],
-  ["Class A common stock outstanding immediately after this offering", "[•] shares"],
-  ["Class B common stock outstanding immediately after this offering", "[•] shares (convertible into Class A common stock on a one-for-one basis; ten votes per share)"],
+  ["Class A common stock offered by us", "50,000,000 shares"],
+  ["Option to purchase additional shares", "The underwriters have an option, exercisable for 30 days, to purchase up to 7,500,000 additional shares of Class A common stock from us solely to cover over-allotments, if any."],
+  ["Class A common stock outstanding immediately after this offering", "200,000,000 shares"],
+  ["Class B common stock outstanding immediately after this offering", "400,000,000 shares (convertible into Class A common stock on a one-for-one basis; ten votes per share)"],
   ["Voting rights", "Each share of Class A common stock is entitled to one vote; each share of Class B common stock is entitled to ten votes. The Class A and Class B common stock vote together as a single class on all matters, except as required by law."],
   ["Use of proceeds", "We intend to use the net proceeds for general corporate purposes, including research and development, relay infrastructure, working capital and potential acquisitions. See “Use of Proceeds.”"],
   ["Proposed Nasdaq Global Market symbol", "“ECNC”"],
   ["Risk factors", "See “Risk Factors” and other information included in this prospectus for a discussion of factors you should consider before deciding to invest in our Class A common stock."],
  ], [1.9 * 72, 4.4 * 72]),
- ("p", "Unless otherwise indicated, the information in this prospectus assumes (i) no exercise of the underwriters’ option to purchase additional shares, (ii) the conversion of all outstanding convertible securities as described herein, and (iii) an initial public offering price of $[•] per share, the midpoint of the range set forth on the cover of this prospectus."),
+ ("p", "Unless otherwise indicated, the information in this prospectus assumes (i) no exercise of the underwriters’ option to purchase additional shares, (ii) the conversion of all outstanding convertible securities as described herein, and (iii) an initial public offering price of $30.00 per share, the midpoint of the range set forth on the cover of this prospectus."),
  ("h2", "Summary Consolidated Financial and Operating Data"),
  ("p", "We were formed in 2026 and have not generated revenue. Our activities to date have consisted of developing the ECNUchat platform, and our historical financial statements, which will be included in this prospectus at the page referenced in the table of contents under “Index to Financial Statements,” should be read in conjunction with “Selected Consolidated Financial and Operating Data” and “Management’s Discussion and Analysis of Financial Condition and Results of Operations.” The summary balance sheet data below is presented on an actual basis and on an as-adjusted basis giving effect to this offering, and is qualified in its entirety by reference to those sections."),
  ("table", [
   ["(in thousands)", "Actual", "As Adjusted"],
-  ["Cash and cash equivalents", "$[•]", "$[•]"],
-  ["Total assets", "$[•]", "$[•]"],
-  ["Total liabilities", "$[•]", "$[•]"],
-  ["Total stockholders’ equity", "$[•]", "$[•]"],
+  ["Cash and cash equivalents", "$9,640", "$1,386,640"],
+  ["Total assets", "$9,950", "$1,386,950"],
+  ["Total liabilities", "$310", "$310"],
+  ["Total stockholders’ equity", "$9,640", "$1,386,640"],
  ], [2.6 * 72, 1.7 * 72, 1.7 * 72]),
 ])]
 
@@ -152,7 +152,7 @@ SECTIONS += [("RISK FACTORS", [
  ("risk", "We are an emerging growth company and have elected reduced disclosure, which may make our stock less attractive.",
   "We are an emerging growth company under the JOBS Act and are exempt from certain reporting requirements, including the auditor attestation requirement of Section 404 of the Sarbanes-Oxley Act. Reduced disclosure may make it harder for investors to evaluate our business and may depress the price of our Class A common stock."),
  ("risk", "You will suffer immediate and substantial dilution.",
-  "Investors purchasing shares in this offering will pay a price substantially higher than the net tangible book value per share of our existing stockholders and will experience immediate dilution of [•] per share, with the possibility of further dilution from future issuances, option exercises and the conversion of Class B common stock."),
+  "Investors purchasing shares in this offering will pay a price substantially higher than the net tangible book value per share of our existing stockholders and will experience immediate dilution of $27.69 per share, with the possibility of further dilution from future issuances, option exercises and the conversion of Class B common stock."),
  ("risk", "We have broad discretion over the use of proceeds and may not use them effectively.",
   "Our management will have considerable discretion in applying the net proceeds of this offering. We currently intend to use them for general corporate purposes, but the actual allocation may differ materially, and investments made with the proceeds may not yield a return."),
  ("risk", "Provisions in our charter and bylaws and under Delaware law could discourage a takeover that stockholders may consider favorable.",
@@ -167,7 +167,7 @@ SECTIONS += [("SPECIAL NOTE REGARDING FORWARD-LOOKING STATEMENTS", [
 ])]
 
 SECTIONS += [("USE OF PROCEEDS", [
- ("p", "We estimate that the net proceeds to us from this offering will be approximately $[•] (or approximately $[•] if the underwriters exercise in full their option to purchase additional shares), assuming an initial public offering price of $[•] per share, which is the midpoint of the price range set forth on the cover of this prospectus, after deducting underwriting discounts and commissions and estimated offering expenses payable by us."),
+ ("p", "We estimate that the net proceeds to us from this offering will be approximately $1,377.0 million (or approximately $1,586.3 million if the underwriters exercise in full their option to purchase additional shares), assuming an initial public offering price of $30.00 per share, which is the midpoint of the price range set forth on the cover of this prospectus, after deducting underwriting discounts and commissions and estimated offering expenses payable by us."),
  ("p", "We intend to use the net proceeds of this offering for general corporate purposes, including: (i) research and development, including completion of our second-generation platform, multi-device support, metadata protection and independent security audits; (ii) expansion and hardening of our relay infrastructure; (iii) sales, marketing and user acquisition; and (iv) working capital and other general corporate purposes. We may also use a portion of the proceeds to acquire or invest in complementary businesses, products or technologies, although we have no present agreements or commitments to do so."),
  ("p", "Pending their use, we intend to invest the net proceeds in short-term, investment-grade, interest-bearing securities. The amounts and timing of our actual expenditures will depend on numerous factors, and our management will have broad discretion in the application of the net proceeds."),
 ])]
@@ -177,41 +177,41 @@ SECTIONS += [("DIVIDEND POLICY", [
 ])]
 
 SECTIONS += [("CAPITALIZATION", [
- ("p", "The following table sets forth our cash and cash equivalents and capitalization as of [•], 2026, on an actual basis and on an as-adjusted basis giving effect to the sale of shares in this offering at an assumed initial public offering price of $[•] per share, after deducting underwriting discounts and commissions and estimated offering expenses. You should read this table together with our consolidated financial statements and the related notes and “Management’s Discussion and Analysis of Financial Condition and Results of Operations” included elsewhere in this prospectus."),
+ ("p", "The following table sets forth our cash and cash equivalents and capitalization as of October 31, 2026, on an actual basis and on an as-adjusted basis giving effect to the sale of shares in this offering at an assumed initial public offering price of $30.00 per share, after deducting underwriting discounts and commissions and estimated offering expenses. You should read this table together with our consolidated financial statements and the related notes and “Management’s Discussion and Analysis of Financial Condition and Results of Operations” included elsewhere in this prospectus."),
  ("table", [
   ["(in thousands, except share data)", "Actual", "As Adjusted"],
-  ["Cash and cash equivalents", "$[•]", "$[•]"],
-  ["Class A common stock, $0.0001 par value", "$[•]", "$[•]"],
-  ["Class B common stock, $0.0001 par value", "$[•]", "$[•]"],
-  ["Additional paid-in capital", "$[•]", "$[•]"],
-  ["Accumulated deficit", "$([•])", "$([•])"],
-  ["Total stockholders’ equity", "$[•]", "$[•]"],
-  ["Total capitalization", "$[•]", "$[•]"],
+  ["Cash and cash equivalents", "$9,640", "$1,386,640"],
+  ["Class A common stock, $0.0001 par value", "$15", "$20"],
+  ["Class B common stock, $0.0001 par value", "$40", "$40"],
+  ["Additional paid-in capital", "$12,485", "$1,389,480"],
+  ["Accumulated deficit", "$(2,900)", "$(2,900)"],
+  ["Total stockholders’ equity", "$9,640", "$1,386,640"],
+  ["Total capitalization", "$9,640", "$1,386,640"],
  ], [2.9 * 72, 1.5 * 72, 1.6 * 72]),
 ])]
 
 SECTIONS += [("DILUTION", [
- ("p", "Investors who purchase shares of Class A common stock in this offering will experience immediate and substantial dilution in the net tangible book value of their investment. Our net tangible book value as of [•], 2026 was $[•], or $[•] per share. After giving effect to this offering, our as-adjusted net tangible book value would be $[•], or $[•] per share. This represents an immediate increase in net tangible book value of $[•] per share to existing stockholders and an immediate dilution of $[•] per share to new investors. The following table illustrates this dilution on a per-share basis:"),
+ ("p", "Investors who purchase shares of Class A common stock in this offering will experience immediate and substantial dilution in the net tangible book value of their investment. Our net tangible book value as of October 31, 2026 was $9,640,000, or $0.02 per share. After giving effect to this offering, our as-adjusted net tangible book value would be $1,386,640,000, or $2.31 per share. This represents an immediate increase in net tangible book value of $2.29 per share to existing stockholders and an immediate dilution of $27.69 per share to new investors. The following table illustrates this dilution on a per-share basis:"),
  ("table", [
   ["", "Per Share"],
-  ["Assumed initial public offering price", "$[•]"],
-  ["Net tangible book value per share before this offering", "$[•]"],
-  ["Increase per share attributable to new investors", "$[•]"],
-  ["As-adjusted net tangible book value per share after this offering", "$[•]"],
-  ["Dilution per share to new investors", "$[•]"],
+  ["Assumed initial public offering price", "$30.00"],
+  ["Net tangible book value per share before this offering", "$0.02"],
+  ["Increase per share attributable to new investors", "$2.29"],
+  ["As-adjusted net tangible book value per share after this offering", "$2.31"],
+  ["Dilution per share to new investors", "$27.69"],
  ], [4.3 * 72, 1.7 * 72]),
- ("p", "The table above excludes [•] shares of Class A common stock issuable upon the exercise of outstanding options and the settlement of restricted stock units. To the extent such securities are exercised or settled, there will be further dilution to new investors."),
+ ("p", "The table above excludes 12,500,000 shares of Class A common stock issuable upon the exercise of outstanding options and 2,000,000 shares issuable upon the settlement of restricted stock units. To the extent such securities are exercised or settled, there will be further dilution to new investors."),
 ])]
 
 SECTIONS += [("SELECTED CONSOLIDATED FINANCIAL AND OPERATING DATA", [
  ("p", "We were incorporated in 2026 and, as of the date of this prospectus, have not generated revenue. Our selected consolidated financial data is derived from our audited consolidated financial statements included elsewhere in this prospectus. Historical results are not necessarily indicative of results to be expected in future periods. The data below should be read in conjunction with “Capitalization,” “Management’s Discussion and Analysis of Financial Condition and Results of Operations” and our consolidated financial statements and the related notes."),
  ("table", [
-  ["(in thousands)", "Period from Inception to [•], 2026"],
+  ["(in thousands)", "Period from Inception (March 2, 2026) to October 31, 2026"],
   ["Revenue", "$—"],
-  ["Research and development expense", "$[•]"],
-  ["General and administrative expense", "$[•]"],
-  ["Net loss", "$([•])"],
-  ["Cash and cash equivalents, end of period", "$[•]"],
+  ["Research and development expense", "$1,940"],
+  ["General and administrative expense", "$960"],
+  ["Net loss", "$(2,900)"],
+  ["Cash and cash equivalents, end of period", "$9,640"],
  ], [3.1 * 72, 2.9 * 72]),
  ("p", "As a development-stage company, our operating data to date consists principally of platform development milestones rather than commercial metrics. As of the date of this prospectus, our platform comprises approximately 20,000 lines of code, a 95-function automated security and protocol test suite, desktop and terminal clients sharing a single session engine, and a second-generation web client and relay architecture in development. We do not currently charge users, and we had no paying customers as of the date of this prospectus."),
 ])]

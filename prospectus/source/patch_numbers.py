@@ -1,0 +1,130 @@
+# -*- coding: utf-8 -*-
+"""Fill the drill-edition numbers into the prospectus sources."""
+import io, sys
+BASE = "/home/hatch/workspace/ecnuchat-prospectus/"
+MISSING = []
+
+def patch(fname, pairs):
+    p = BASE + fname
+    txt = io.open(p, encoding="utf-8").read()
+    for old, new in pairs:
+        if old not in txt:
+            MISSING.append((fname, old[:60]))
+        txt = txt.replace(old, new)
+    io.open(p, "w", encoding="utf-8").write(txt)
+
+patch("build_prospectus.py", [
+ ("Preliminary Prospectus dated November [•], 2026", "Preliminary Prospectus dated November 20, 2026"),
+ ('"[•] Shares"', '"50,000,000 Shares"'),
+ ("beginning on page [•] of this prospectus", "beginning on page 10 of this prospectus"),
+ ("on or about [•], 2026", "on or about November 25, 2026"),
+ ("[•] &nbsp;&nbsp;•&nbsp;&nbsp; [•] &nbsp;&nbsp;•&nbsp;&nbsp; [•]",
+  "Northgate Securities &nbsp;&nbsp;•&nbsp;&nbsp; Harborline Capital &nbsp;&nbsp;•&nbsp;&nbsp; Summit Peak Securities"),
+ ("Prospectus dated [•], 2026", "Prospectus dated November 20, 2026"),
+])
+
+patch("content_a.py", [
+ ("We are offering [•] shares", "We are offering 50,000,000 shares"),
+ ("between $[•] and $[•] per share", "between $28.00 and $32.00 per share"),
+ ("purchase up to an additional [•] shares of Class A common stock from us at the initial public offering price",
+  "purchase up to an additional 7,500,000 shares of Class A common stock from us at the initial public offering price"),
+ ('["Public offering price", "$[•]", "$[•]"]', '["Public offering price", "$30.00", "$1,500,000,000"]'),
+ ('["Underwriting discounts and commissions", "$[•]", "$[•]"]', '["Underwriting discounts and commissions", "$2.10", "$105,000,000"]'),
+ ('["Proceeds, before expenses, to us", "$[•]", "$[•]"]', '["Proceeds, before expenses, to us", "$27.90", "$1,395,000,000"]'),
+ ("Our website address is [•].", "Our website address is www.ecnuchat.com."),
+ ('["Class A common stock offered by us", "[•] shares"]', '["Class A common stock offered by us", "50,000,000 shares"]'),
+ ("to purchase up to [•] additional shares of Class A common stock from us solely to cover over-allotments",
+  "to purchase up to 7,500,000 additional shares of Class A common stock from us solely to cover over-allotments"),
+ ('["Class A common stock outstanding immediately after this offering", "[•] shares"]',
+  '["Class A common stock outstanding immediately after this offering", "200,000,000 shares"]'),
+ ('["Class B common stock outstanding immediately after this offering", "[•] shares (convertible',
+  '["Class B common stock outstanding immediately after this offering", "400,000,000 shares (convertible'),
+ ("an initial public offering price of $[•] per share, the midpoint of the range set forth on the cover of this prospectus",
+  "an initial public offering price of $30.00 per share, the midpoint of the range set forth on the cover of this prospectus"),
+ ('["Cash and cash equivalents", "$[•]", "$[•]"]', '["Cash and cash equivalents", "$9,640", "$1,386,640"]'),
+ ('["Total assets", "$[•]", "$[•]"]', '["Total assets", "$9,950", "$1,386,950"]'),
+ ('["Total liabilities", "$[•]", "$[•]"]', '["Total liabilities", "$310", "$310"]'),
+ ('["Total stockholders’ equity", "$[•]", "$[•]"]', '["Total stockholders’ equity", "$9,640", "$1,386,640"]'),
+ ("immediate dilution of [•] per share, with the possibility of further dilution",
+  "immediate dilution of $27.69 per share, with the possibility of further dilution"),
+ ("will be approximately $[•] (or approximately $[•] if the underwriters exercise in full",
+  "will be approximately $1,377.0 million (or approximately $1,586.3 million if the underwriters exercise in full"),
+ ("assuming an initial public offering price of $[•] per share, which is the midpoint of the price range set forth on the cover of this prospectus, after deducting",
+  "assuming an initial public offering price of $30.00 per share, which is the midpoint of the price range set forth on the cover of this prospectus, after deducting"),
+ ("capitalization as of [•], 2026, on an actual basis", "capitalization as of October 31, 2026, on an actual basis"),
+ ("at an assumed initial public offering price of $[•] per share, after deducting underwriting discounts and commissions and estimated offering expenses. You should read this table together with",
+  "at an assumed initial public offering price of $30.00 per share, after deducting underwriting discounts and commissions and estimated offering expenses. You should read this table together with"),
+ ('["Class A common stock, $0.0001 par value", "$[•]", "$[•]"]', '["Class A common stock, $0.0001 par value", "$15", "$20"]'),
+ ('["Class B common stock, $0.0001 par value", "$[•]", "$[•]"]', '["Class B common stock, $0.0001 par value", "$40", "$40"]'),
+ ('["Additional paid-in capital", "$[•]", "$[•]"]', '["Additional paid-in capital", "$12,485", "$1,389,480"]'),
+ ('["Accumulated deficit", "$([•])", "$([•])"]', '["Accumulated deficit", "$(2,900)", "$(2,900)"]'),
+ ('["Total capitalization", "$[•]", "$[•]"]', '["Total capitalization", "$9,640", "$1,386,640"]'),
+ ("net tangible book value as of [•], 2026 was $[•], or $[•] per share",
+  "net tangible book value as of October 31, 2026 was $9,640,000, or $0.02 per share"),
+ ("our as-adjusted net tangible book value would be $[•], or $[•] per share",
+  "our as-adjusted net tangible book value would be $1,386,640,000, or $2.31 per share"),
+ ("immediate increase in net tangible book value of $[•] per share", "immediate increase in net tangible book value of $2.29 per share"),
+ ("immediate dilution of $[•] per share to new investors", "immediate dilution of $27.69 per share to new investors"),
+ ('["Assumed initial public offering price", "$[•]"]', '["Assumed initial public offering price", "$30.00"]'),
+ ('["Net tangible book value per share before this offering", "$[•]"]', '["Net tangible book value per share before this offering", "$0.02"]'),
+ ('["Increase per share attributable to new investors", "$[•]"]', '["Increase per share attributable to new investors", "$2.29"]'),
+ ('["As-adjusted net tangible book value per share after this offering", "$[•]"]', '["As-adjusted net tangible book value per share after this offering", "$2.31"]'),
+ ('["Dilution per share to new investors", "$[•]"]', '["Dilution per share to new investors", "$27.69"]'),
+ ("excludes [•] shares of Class A common stock issuable upon the exercise of outstanding options and the settlement of restricted stock units",
+  "excludes 12,500,000 shares of Class A common stock issuable upon the exercise of outstanding options and 2,000,000 shares issuable upon the settlement of restricted stock units"),
+ ('["(in thousands)", "Period from Inception to [•], 2026"]', '["(in thousands)", "Period from Inception (March 2, 2026) to October 31, 2026"]'),
+ ('["Research and development expense", "$[•]"]', '["Research and development expense", "$1,940"]'),
+ ('["General and administrative expense", "$[•]"]', '["General and administrative expense", "$960"]'),
+ ('["Net loss", "$([•])"]', '["Net loss", "$(2,900)"]'),
+ ('["Cash and cash equivalents, end of period", "$[•]"]', '["Cash and cash equivalents, end of period", "$9,640"]'),
+])
+print("part 1 applied; missing:", MISSING)
+
+patch("content_c.py", [
+ ("for the period from inception through [•], 2026:", "for the period from inception through October 31, 2026:"),
+ ("beneficial ownership of our common stock as of [•], 2026", "beneficial ownership of our common stock as of October 31, 2026"),
+ ('["Zhong Hao", "[•]", "[•]%", "[•]%"]', '["Zhong Hao", "220,000,000", "53.0%", "52.4%"]'),
+ ('["Zelin Wu", "[•]", "[•]%", "[•]%"]', '["Zelin Wu", "60,000,000", "14.5%", "14.3%"]'),
+ ('["Junwei Chen", "[•]", "[•]%", "[•]%"]', '["Junwei Chen", "60,000,000", "14.5%", "14.3%"]'),
+ ('["Junqiao Chen", "[•]", "[•]%", "[•]%"]', '["Junqiao Chen", "60,000,000", "14.5%", "14.3%"]'),
+ ('["All directors and executive officers as a group (4 persons)", "[•]", "[•]%", "[•]%"]',
+  '["All directors and executive officers as a group (4 persons)", "400,000,000", "96.4%", "95.2%"]'),
+ ("consists of [•] shares of Class A common stock, par value $0.0001 per share, [•] shares of Class B common stock, par value $0.0001 per share, and [•] shares of preferred stock",
+  "consists of 2,000,000,000 shares of Class A common stock, par value $0.0001 per share, 500,000,000 shares of Class B common stock, par value $0.0001 per share, and 100,000,000 shares of preferred stock"),
+ ("The transfer agent and registrar for our Class A common stock is [•].",
+  "The transfer agent and registrar for our Class A common stock is Liberty Stock Transfer, Inc."),
+ ("we will have [•] shares of Class A common stock outstanding (assuming conversion of Class B shares only as described herein) and [•] shares of Class B common stock outstanding",
+  "we will have 200,000,000 shares of Class A common stock outstanding (assuming conversion of Class B shares only as described herein) and 400,000,000 shares of Class B common stock outstanding"),
+ ("[•], [•] and [•] are acting as joint book-running managers of this offering and as representatives of the underwriters.",
+  "Northgate Securities, LLC, Harborline Capital Markets, LLC and Summit Peak Securities, LLC are acting as joint book-running managers of this offering and as representatives of the underwriters."),
+ ('["[•]", "[•]"],\n  ["[•]", "[•]"],\n  ["[•]", "[•]"],\n  ["Total", "[•]"]',
+  '["Northgate Securities, LLC", "25,000,000"],\n  ["Harborline Capital Markets, LLC", "15,000,000"],\n  ["Summit Peak Securities, LLC", "10,000,000"],\n  ["Total", "50,000,000"]'),
+ ("at a concession not in excess of $[•] per share", "at a concession not in excess of $1.26 per share"),
+ ("to purchase up to [•] additional shares from us at the initial public offering price, less underwriting discounts and commissions, solely to cover over-allotments.",
+  "to purchase up to 7,500,000 additional shares from us at the initial public offering price, less underwriting discounts and commissions, solely to cover over-allotments."),
+ ("will be $[•] per share and $[•] in total, and that total offering expenses payable by us will be approximately $[•].",
+  "will be $2.10 per share and $105,000,000 in total, and that total offering expenses payable by us will be approximately $18,000,000."),
+ ("will be passed upon for us by [•], and certain legal matters will be passed upon for the underwriters by [•].",
+  "will be passed upon for us by Whitmore &amp; Sloane LLP, and certain legal matters will be passed upon for the underwriters by Callahan Reed LLP."),
+ ("as of and for the period ended [•], 2026, included in this prospectus, have been audited by [•], an independent registered public accounting firm",
+  "as of and for the period ended October 31, 2026, included in this prospectus, have been audited by Alden Pierce LLP, an independent registered public accounting firm"),
+ ("available on our investor relations website at [•].", "available on our investor relations website at investors.ecnuchat.com."),
+ ("Consolidated Balance Sheet as of [•], 2026 — F-3", "Consolidated Balance Sheet as of October 31, 2026 — F-3"),
+ ("Consolidated Statement of Operations for the period from inception to [•], 2026 — F-4",
+  "Consolidated Statement of Operations for the period from inception to October 31, 2026 — F-4"),
+ ('("h2", "Report of Independent Registered Public Accounting Firm (Placeholder)")',
+  '("h2", "Report of Independent Registered Public Accounting Firm")'),
+ ("[To be completed by amendment upon inclusion of audited financial statements. In a preliminary prospectus, this section sets forth the framework of the financial statements to be audited in accordance with the standards of the Public Company Accounting Oversight Board (United States).]",
+  "To the Stockholders and the Board of Directors of ECNUchat, Inc.: We have audited the accompanying consolidated balance sheet of ECNUchat, Inc. as of October 31, 2026, and the related consolidated statements of operations, stockholders’ equity and cash flows for the period from March 2, 2026 (inception) to October 31, 2026, and the related notes (collectively referred to as the “financial statements”). In our opinion, the financial statements present fairly, in all material respects, the financial position of the Company as of October 31, 2026, and the results of its operations and its cash flows for the period from inception to October 31, 2026, in conformity with accounting principles generally accepted in the United States of America. These financial statements are the responsibility of the Company’s management. Our responsibility is to express an opinion on the financial statements based on our audit, which was conducted in accordance with the standards of the Public Company Accounting Oversight Board (United States). — Alden Pierce LLP, Shanghai, China, November 18, 2026."),
+ ('("h2", "Consolidated Balance Sheet (Framework)")', '("h2", "Consolidated Balance Sheet")'),
+ ('["(in thousands)", "As of [•], 2026"]', '["(in thousands)", "As of October 31, 2026"]'),
+ ('["Cash and cash equivalents", "$[•]"]', '["Cash and cash equivalents", "$9,640"]'),
+ ('["Total assets", "$[•]"]', '["Total assets", "$9,950"]'),
+ ('["Total liabilities", "$[•]"]', '["Total liabilities", "$310"]'),
+ ('["Class A common stock, $0.0001 par value", "$[•]"]', '["Class A common stock, $0.0001 par value", "$15"]'),
+ ('["Class B common stock, $0.0001 par value", "$[•]"]', '["Class B common stock, $0.0001 par value", "$40"]'),
+ ('["Additional paid-in capital", "$[•]"]', '["Additional paid-in capital", "$12,485"]'),
+ ('["Accumulated deficit", "$([•])"]', '["Accumulated deficit", "$(2,900)"]'),
+ ('["Total stockholders’ equity", "$[•]"]', '["Total stockholders’ equity", "$9,640"]'),
+])
+print("part 2 applied; missing total:", MISSING)
