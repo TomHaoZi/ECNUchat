@@ -21,11 +21,12 @@ million. All figures are illustrative and internally consistent, prepared for
 rehearsal and discussion purposes — this is not an offer to sell securities, and
 no registration statement has been filed or become effective.
 
-`logo-options/` holds four minimalist logo redesign directions (A: bubble tile,
-B: red circle badge, C: black squircle, D: outline ring) under consideration to
-replace the current cover logo.
+`logo-options/` holds the four minimalist logo redesign directions that were
+considered (A: bubble tile, B: red circle badge, C: black squircle — selected,
+D: outline ring).
 
-- `logo-mark.png` / `logo-full.png` — the ECNUchat logo (chat bubble + keyhole:
-  messaging + encryption), drawn for this project.
+- `logo-mark.png` / `logo-full.png` — the official ECNUchat logo (design C,
+  selected 2026-11-22): a black squircle holding a white chat-bubble glyph with
+  the keyhole punched out in black — messaging + encryption in a single mark.
 - `source/` — the document generator (Python + ReportLab) and logo script, so the
   prospectus can be revised and rebuilt.

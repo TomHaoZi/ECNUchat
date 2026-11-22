@@ -1,55 +1,47 @@
 #!/usr/bin/env python3
-"""ECNUchat logo v2: navy tile, white chat bubble, ECNU-red keyhole + lockup."""
+"""ECNUchat official logo (design C, selected 2026-11-22):
+black squircle, white chat-bubble glyph, keyhole punched out in black."""
 from PIL import Image, ImageDraw, ImageFont
 
-NAVY = (10, 37, 64, 255)
+S = 4
+INK = (14, 17, 23, 255)
 RED = (166, 30, 54, 255)
 WHITE = (255, 255, 255, 255)
-S = 4  # supersample factor
+OUT = "/home/hatch/workspace/ecnuchat-prospectus/"
+
+def keyhole(d, cx, cy, r, stem_w, stem_h, color):
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=color)
+    d.polygon([(cx - stem_w * 0.55, cy + r * 0.45), (cx + stem_w * 0.55, cy + r * 0.45),
+               (cx + stem_w, cy + r + stem_h), (cx - stem_w, cy + r + stem_h)], fill=color)
 
 def draw_mark(px):
-    """Draw the mark at px*S then downscale to px."""
     u = px * S
     img = Image.new("RGBA", (u, u), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    def k(v): return int(v * u / 1000)  # coords in per-mille of tile
-    d.rounded_rectangle([0, 0, u, u], radius=k(210), fill=NAVY)
-    d.rounded_rectangle([k(26), k(26), k(974), k(974)], radius=k(188), outline=(255, 255, 255, 46), width=k(6))
-    # chat bubble
-    d.rounded_rectangle([k(215), k(215), k(785), k(660)], radius=k(120), fill=WHITE)
-    # tail: top edge buried inside the bubble so the joint is invisible
-    d.polygon([(k(335), k(600)), (k(525), k(600)), (k(350), k(815))], fill=WHITE)
-    # keyhole
-    cx, cy = k(500), k(395)
-    d.ellipse([cx - k(78), cy - k(78), cx + k(78), cy + k(78)], fill=RED)
-    d.polygon([(cx - k(52), cy + k(45)), (cx + k(52), cy + k(45)), (cx + k(78), cy + k(185)), (cx - k(78), cy + k(185))], fill=RED)
+    def k(v): return v * u // 1000
+    d.rounded_rectangle([k(40), k(40), k(960), k(960)], radius=k(250), fill=INK)
+    d.rounded_rectangle([k(225), k(250), k(775), k(680)], radius=k(110), fill=WHITE)
+    d.polygon([(k(330), k(630)), (k(510), k(630)), (k(345), k(800))], fill=WHITE)
+    keyhole(d, k(500), k(415), k(72), k(60), k(105), INK)
     return img.resize((px, px), Image.LANCZOS)
 
-mark = draw_mark(1000)
-mark.save("/home/hatch/workspace/ecnuchat-prospectus/logo-mark.png")
+draw_mark(1200).save(OUT + "logo-mark.png")
 
-# ---- horizontal lockup, final size 2800x720 ----
+# horizontal lockup
 FW, FH = 2800, 720
 W, H = FW * S, FH * S
 lock = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-lock.alpha_composite(draw_mark(640 * S // S * 1) if False else Image.new("RGBA", (1, 1)), (0, 0))  # no-op guard
-m = draw_mark(640)
-# draw_mark returns 640px image; upscale path: redraw at full res
-m_big = draw_mark(640 * S)
-lock.alpha_composite(m_big, (40 * S, 40 * S))
+lock.alpha_composite(draw_mark(640 * S), (40 * S, 40 * S))
 d = ImageDraw.Draw(lock)
 bold = "/home/hatch/workspace/ruanzhu/fonts/NotoSansSC-Bold.ttf"
 serif = "/usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf"
 tx = 740 * S
-# wordmark: fit width ~1850 final px
 size = 200
 while size > 40:
     f = ImageFont.truetype(bold, size * S)
-    w = d.textlength("ECNUCHAT", font=f)
-    if w <= 1850 * S: break
+    if d.textlength("ECNUCHAT", font=f) <= 1850 * S: break
     size -= 5
-d.text((tx, 118 * S), "ECNUCHAT", font=f, fill=NAVY)
-# tagline letterspaced, fit same width
+d.text((tx, 118 * S), "ECNUCHAT", font=f, fill=INK)
 tag = "END-TO-END ENCRYPTED MESSAGING"
 tsize = 54
 while tsize > 20:
@@ -57,11 +49,9 @@ while tsize > 20:
     w2 = sum(d.textlength(ch, font=f2) for ch in tag) + (len(tag) - 1) * tsize * S * 0.42
     if w2 <= 1850 * S: break
     tsize -= 2
-x = tx
-tracking = tsize * S * 0.42
+x = tx; tracking = tsize * S * 0.42
 for ch in tag:
     d.text((x, 400 * S), ch, font=f2, fill=RED)
     x += d.textlength(ch, font=f2) + tracking
-lock = lock.resize((FW, FH), Image.LANCZOS)
-lock.save("/home/hatch/workspace/ecnuchat-prospectus/logo-full.png")
-print("logo v2 done")
+lock.resize((FW, FH), Image.LANCZOS).save(OUT + "logo-full.png")
+print("official logo (C) generated")
