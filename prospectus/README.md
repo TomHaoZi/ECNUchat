@@ -1,8 +1,8 @@
-# ECNUchat, Inc. — 纳斯达克招股书 (Nasdaq Prospectus · Form S-1)
+# ECNUchat, Inc. — Nasdaq Prospectus (Form S-1)
 
 ![ECNUchat logo](logo-full.png)
 
-`ECNUchat-Nasdaq-Prospectus.pdf` — the prospectus for the initial public offering
+`ECNUchat-Form-S-1-Prospectus.pdf` — the prospectus for the initial public offering
 of ECNUchat, Inc. Class A common stock and its listing on the Nasdaq Global
 Market under the symbol **ECNC**, prepared in the statutory format for a Nasdaq
 IPO: SEC Form S-1, comprising the Part I prospectus, Part II (Items 13–17) and

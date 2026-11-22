@@ -216,4 +216,4 @@ def build(out):
     print("built:", out)
 
 if __name__ == "__main__":
-    build("/home/hatch/workspace/ecnuchat-prospectus/ECNUchat-Nasdaq-Prospectus.pdf")
+    build("/home/hatch/workspace/ecnuchat-prospectus/ECNUchat-Form-S-1-Prospectus.pdf")
