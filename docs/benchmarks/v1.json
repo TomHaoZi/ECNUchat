@@ -1,0 +1,838 @@
+{
+  "finished_utc": "2026-11-26T03:00:14.296787+00:00",
+  "smoke": false,
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.11",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "cryptography": "50.0.2",
+  "openssl": "OpenSSL 4.0.3 29 Sep 2026",
+  "timing": "Median of batch totals divided by successful messages. Both endpoints in one process.",
+  "clock_resolution_s": {
+    "perf_counter": 1e-07,
+    "process_time": 1e-07
+  },
+  "profiles": "first = registered identities, fresh OPK (also PQOPK in hybrid); one_way = A to B; alternating = B to A then A to B. Established bursts are at most 128 messages after an untimed A-to-B bootstrap. PSK/plain controls have no handshake or ratchet.",
+  "scope": "Includes source v1 send/decrypt, authentication, JSON/base64 and per-delivery correctness checks. Prebuilt directory response, warm pinned identities; excludes registration, prekey provisioning, database, UI, server, networking and requests/acks.",
+  "wire_scope": "One relay-to-recipient application JSON envelope in UTF-8. Excludes other messages, WebSocket framing and transport.",
+  "source_sha256": {
+    "scripts/benchmark_v1.py": "4cbe68cdd97d974a0afc2dbbee099489dd522e808e28654464628512d58a9e19",
+    "src/client.py": "dc68409c1a6611d93a4d69611551f94d0ed123df0bd713b4f764508a0d6bcf3f",
+    "src/protocol.py": "175a6d470de8ac6436117b5049bdd1ec758a110337cd686b467d09d480a2f553",
+    "src/prekeys.py": "f015d98f99c63415010b40369b19ae83141087f98d4495485ffe3413cb81e8bf",
+    "src/x3dh.py": "6168d5e4fca46d80b283e3bc97f7333f065772f78055e37cfae68769d6aa9ca4",
+    "src/double_ratchet.py": "b877bd20711f5196f403915b8db9b924f32d775afaf1310e443012f584078712",
+    "src/store.py": "9f5d14bd55d366fbe7133d5692d3591c07a5ab3ca88fae96772c13634d209c81"
+  },
+  "state_json_bytes_per_endpoint": {
+    "v1_classical": {
+      "after_first": {
+        "alice": 427,
+        "bob": 435
+      },
+      "after_first_plus_32_one_way": {
+        "alice": 428,
+        "bob": 2068
+      },
+      "after_first_plus_32_alternating": {
+        "alice": 2031,
+        "bob": 2129
+      }
+    },
+    "v1_hybrid": {
+      "after_first": {
+        "alice": 3458,
+        "bob": 2016
+      },
+      "after_first_plus_32_one_way": {
+        "alice": 3459,
+        "bob": 3649
+      },
+      "after_first_plus_32_alternating": {
+        "alice": 5062,
+        "bob": 5160
+      }
+    }
+  },
+  "results": [
+    {
+      "mode": "aes256gcm_psk",
+      "scenario": "message",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 14.16014404296875,
+      "median_cpu_us_per_message": 13.828277587890625,
+      "samples": [
+        {
+          "messages": 32768,
+          "wall_ns": 473885600,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 450,
+          "wire_bytes_max": 450,
+          "wire_bytes_total": 14745600
+        },
+        {
+          "messages": 32768,
+          "wall_ns": 462541200,
+          "process_cpu_ns": 453125000,
+          "wire_bytes_min": 450,
+          "wire_bytes_max": 450,
+          "wire_bytes_total": 14745600
+        },
+        {
+          "messages": 32768,
+          "wall_ns": 506090900,
+          "process_cpu_ns": 500000000,
+          "wire_bytes_min": 450,
+          "wire_bytes_max": 450,
+          "wire_bytes_total": 14745600
+        },
+        {
+          "messages": 32768,
+          "wall_ns": 459045200,
+          "process_cpu_ns": 453125000,
+          "wire_bytes_min": 450,
+          "wire_bytes_max": 450,
+          "wire_bytes_total": 14745600
+        },
+        {
+          "messages": 32768,
+          "wall_ns": 535906400,
+          "process_cpu_ns": 500000000,
+          "wire_bytes_min": 450,
+          "wire_bytes_max": 450,
+          "wire_bytes_total": 14745600
+        },
+        {
+          "messages": 32768,
+          "wall_ns": 463999600,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 450,
+          "wire_bytes_max": 450,
+          "wire_bytes_total": 14745600
+        },
+        {
+          "messages": 32768,
+          "wall_ns": 455400200,
+          "process_cpu_ns": 453125000,
+          "wire_bytes_min": 450,
+          "wire_bytes_max": 450,
+          "wire_bytes_total": 14745600
+        }
+      ]
+    },
+    {
+      "mode": "aes256gcm_psk",
+      "scenario": "message",
+      "text_bytes": 4096,
+      "median_wall_us_per_message": 59.75572509765625,
+      "median_cpu_us_per_message": 59.1278076171875,
+      "samples": [
+        {
+          "messages": 8192,
+          "wall_ns": 489518900,
+          "process_cpu_ns": 484375000,
+          "wire_bytes_min": 5742,
+          "wire_bytes_max": 5742,
+          "wire_bytes_total": 47038464
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 638017600,
+          "process_cpu_ns": 625000000,
+          "wire_bytes_min": 5742,
+          "wire_bytes_max": 5742,
+          "wire_bytes_total": 47038464
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 545857600,
+          "process_cpu_ns": 531250000,
+          "wire_bytes_min": 5742,
+          "wire_bytes_max": 5742,
+          "wire_bytes_total": 47038464
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 530279200,
+          "process_cpu_ns": 515625000,
+          "wire_bytes_min": 5742,
+          "wire_bytes_max": 5742,
+          "wire_bytes_total": 47038464
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 485445200,
+          "process_cpu_ns": 484375000,
+          "wire_bytes_min": 5742,
+          "wire_bytes_max": 5742,
+          "wire_bytes_total": 47038464
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 482033900,
+          "process_cpu_ns": 468750000,
+          "wire_bytes_min": 5742,
+          "wire_bytes_max": 5742,
+          "wire_bytes_total": 47038464
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 468734500,
+          "process_cpu_ns": 468750000,
+          "wire_bytes_min": 5742,
+          "wire_bytes_max": 5742,
+          "wire_bytes_total": 47038464
+        }
+      ]
+    },
+    {
+      "mode": "plaintext_json",
+      "scenario": "message",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 5.505194091796875,
+      "median_cpu_us_per_message": 5.245208740234375,
+      "samples": [
+        {
+          "messages": 65536,
+          "wall_ns": 360788400,
+          "process_cpu_ns": 343750000,
+          "wire_bytes_min": 292,
+          "wire_bytes_max": 292,
+          "wire_bytes_total": 19136512
+        },
+        {
+          "messages": 65536,
+          "wall_ns": 367109200,
+          "process_cpu_ns": 312500000,
+          "wire_bytes_min": 292,
+          "wire_bytes_max": 292,
+          "wire_bytes_total": 19136512
+        },
+        {
+          "messages": 65536,
+          "wall_ns": 353972400,
+          "process_cpu_ns": 312500000,
+          "wire_bytes_min": 292,
+          "wire_bytes_max": 292,
+          "wire_bytes_total": 19136512
+        },
+        {
+          "messages": 65536,
+          "wall_ns": 357128500,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 292,
+          "wire_bytes_max": 292,
+          "wire_bytes_total": 19136512
+        },
+        {
+          "messages": 65536,
+          "wall_ns": 378991000,
+          "process_cpu_ns": 375000000,
+          "wire_bytes_min": 292,
+          "wire_bytes_max": 292,
+          "wire_bytes_total": 19136512
+        },
+        {
+          "messages": 65536,
+          "wall_ns": 359959600,
+          "process_cpu_ns": 343750000,
+          "wire_bytes_min": 292,
+          "wire_bytes_max": 292,
+          "wire_bytes_total": 19136512
+        },
+        {
+          "messages": 65536,
+          "wall_ns": 361083800,
+          "process_cpu_ns": 328125000,
+          "wire_bytes_min": 292,
+          "wire_bytes_max": 292,
+          "wire_bytes_total": 19136512
+        }
+      ]
+    },
+    {
+      "mode": "plaintext_json",
+      "scenario": "message",
+      "text_bytes": 4096,
+      "median_wall_us_per_message": 17.219635009765625,
+      "median_cpu_us_per_message": 17.1661376953125,
+      "samples": [
+        {
+          "messages": 16384,
+          "wall_ns": 282126500,
+          "process_cpu_ns": 265625000,
+          "wire_bytes_min": 4260,
+          "wire_bytes_max": 4260,
+          "wire_bytes_total": 69795840
+        },
+        {
+          "messages": 16384,
+          "wall_ns": 298128500,
+          "process_cpu_ns": 281250000,
+          "wire_bytes_min": 4260,
+          "wire_bytes_max": 4260,
+          "wire_bytes_total": 69795840
+        },
+        {
+          "messages": 16384,
+          "wall_ns": 314226500,
+          "process_cpu_ns": 312500000,
+          "wire_bytes_min": 4260,
+          "wire_bytes_max": 4260,
+          "wire_bytes_total": 69795840
+        },
+        {
+          "messages": 16384,
+          "wall_ns": 277708300,
+          "process_cpu_ns": 265625000,
+          "wire_bytes_min": 4260,
+          "wire_bytes_max": 4260,
+          "wire_bytes_total": 69795840
+        },
+        {
+          "messages": 16384,
+          "wall_ns": 281528800,
+          "process_cpu_ns": 281250000,
+          "wire_bytes_min": 4260,
+          "wire_bytes_max": 4260,
+          "wire_bytes_total": 69795840
+        },
+        {
+          "messages": 16384,
+          "wall_ns": 291968900,
+          "process_cpu_ns": 296875000,
+          "wire_bytes_min": 4260,
+          "wire_bytes_max": 4260,
+          "wire_bytes_total": 69795840
+        },
+        {
+          "messages": 16384,
+          "wall_ns": 279927800,
+          "process_cpu_ns": 281250000,
+          "wire_bytes_min": 4260,
+          "wire_bytes_max": 4260,
+          "wire_bytes_total": 69795840
+        }
+      ]
+    },
+    {
+      "mode": "v1_classical",
+      "scenario": "alternating",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 204.27431640625,
+      "median_cpu_us_per_message": 198.3642578125,
+      "samples": [
+        {
+          "messages": 2048,
+          "wall_ns": 508796800,
+          "process_cpu_ns": 500000000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 519,
+          "wire_bytes_total": 1062912
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 375048000,
+          "process_cpu_ns": 375000000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 519,
+          "wire_bytes_total": 1062912
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 387656900,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 519,
+          "wire_bytes_total": 1062912
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 418353800,
+          "process_cpu_ns": 406250000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 519,
+          "wire_bytes_total": 1062912
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 445320500,
+          "process_cpu_ns": 453125000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 519,
+          "wire_bytes_total": 1062912
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 404383700,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 519,
+          "wire_bytes_total": 1062912
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 428022400,
+          "process_cpu_ns": 406250000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 519,
+          "wire_bytes_total": 1062912
+        }
+      ]
+    },
+    {
+      "mode": "v1_classical",
+      "scenario": "first",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 828.455859375,
+      "median_cpu_us_per_message": 762.939453125,
+      "samples": [
+        {
+          "messages": 512,
+          "wall_ns": 439354900,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 803,
+          "wire_bytes_max": 803,
+          "wire_bytes_total": 411136
+        },
+        {
+          "messages": 512,
+          "wall_ns": 411990200,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 803,
+          "wire_bytes_max": 803,
+          "wire_bytes_total": 411136
+        },
+        {
+          "messages": 512,
+          "wall_ns": 483969400,
+          "process_cpu_ns": 468750000,
+          "wire_bytes_min": 803,
+          "wire_bytes_max": 803,
+          "wire_bytes_total": 411136
+        },
+        {
+          "messages": 512,
+          "wall_ns": 396159200,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 803,
+          "wire_bytes_max": 803,
+          "wire_bytes_total": 411136
+        },
+        {
+          "messages": 512,
+          "wall_ns": 446516100,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 803,
+          "wire_bytes_max": 803,
+          "wire_bytes_total": 411136
+        },
+        {
+          "messages": 512,
+          "wall_ns": 404802600,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 803,
+          "wire_bytes_max": 803,
+          "wire_bytes_total": 411136
+        },
+        {
+          "messages": 512,
+          "wall_ns": 424169400,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 803,
+          "wire_bytes_max": 803,
+          "wire_bytes_total": 411136
+        }
+      ]
+    },
+    {
+      "mode": "v1_classical",
+      "scenario": "one_way",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 47.819091796875,
+      "median_cpu_us_per_message": 47.6837158203125,
+      "samples": [
+        {
+          "messages": 8192,
+          "wall_ns": 376093600,
+          "process_cpu_ns": 312500000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 521,
+          "wire_bytes_total": 4261120
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 393910400,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 521,
+          "wire_bytes_total": 4261120
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 397145400,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 521,
+          "wire_bytes_total": 4261120
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 477358800,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 521,
+          "wire_bytes_total": 4261120
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 391734000,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 521,
+          "wire_bytes_total": 4261120
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 366927100,
+          "process_cpu_ns": 375000000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 521,
+          "wire_bytes_total": 4261120
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 367777800,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 519,
+          "wire_bytes_max": 521,
+          "wire_bytes_total": 4261120
+        }
+      ]
+    },
+    {
+      "mode": "v1_classical",
+      "scenario": "one_way",
+      "text_bytes": 4096,
+      "median_wall_us_per_message": 89.5171142578125,
+      "median_cpu_us_per_message": 87.738037109375,
+      "samples": [
+        {
+          "messages": 4096,
+          "wall_ns": 375307700,
+          "process_cpu_ns": 343750000,
+          "wire_bytes_min": 5811,
+          "wire_bytes_max": 5813,
+          "wire_bytes_total": 23806592
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 623935500,
+          "process_cpu_ns": 484375000,
+          "wire_bytes_min": 5811,
+          "wire_bytes_max": 5813,
+          "wire_bytes_total": 23806592
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 366662100,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 5811,
+          "wire_bytes_max": 5813,
+          "wire_bytes_total": 23806592
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 353266300,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 5811,
+          "wire_bytes_max": 5813,
+          "wire_bytes_total": 23806592
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 372244700,
+          "process_cpu_ns": 343750000,
+          "wire_bytes_min": 5811,
+          "wire_bytes_max": 5813,
+          "wire_bytes_total": 23806592
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 358221600,
+          "process_cpu_ns": 343750000,
+          "wire_bytes_min": 5811,
+          "wire_bytes_max": 5813,
+          "wire_bytes_total": 23806592
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 360583500,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 5811,
+          "wire_bytes_max": 5813,
+          "wire_bytes_total": 23806592
+        }
+      ]
+    },
+    {
+      "mode": "v1_hybrid",
+      "scenario": "alternating",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 276.50107421875,
+      "median_cpu_us_per_message": 274.658203125,
+      "samples": [
+        {
+          "messages": 2048,
+          "wall_ns": 589569900,
+          "process_cpu_ns": 562500000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1982,
+          "wire_bytes_total": 4059136
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 586527400,
+          "process_cpu_ns": 578125000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1982,
+          "wire_bytes_total": 4059136
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 566274200,
+          "process_cpu_ns": 562500000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1982,
+          "wire_bytes_total": 4059136
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 541252700,
+          "process_cpu_ns": 531250000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1982,
+          "wire_bytes_total": 4059136
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 686161700,
+          "process_cpu_ns": 562500000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1982,
+          "wire_bytes_total": 4059136
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 548675100,
+          "process_cpu_ns": 546875000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1982,
+          "wire_bytes_total": 4059136
+        },
+        {
+          "messages": 2048,
+          "wall_ns": 541437900,
+          "process_cpu_ns": 515625000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1982,
+          "wire_bytes_total": 4059136
+        }
+      ]
+    },
+    {
+      "mode": "v1_hybrid",
+      "scenario": "first",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 1463.754296875,
+      "median_cpu_us_per_message": 1403.80859375,
+      "samples": [
+        {
+          "messages": 512,
+          "wall_ns": 865752000,
+          "process_cpu_ns": 812500000,
+          "wire_bytes_min": 6915,
+          "wire_bytes_max": 6915,
+          "wire_bytes_total": 3540480
+        },
+        {
+          "messages": 512,
+          "wall_ns": 660580900,
+          "process_cpu_ns": 671875000,
+          "wire_bytes_min": 6915,
+          "wire_bytes_max": 6915,
+          "wire_bytes_total": 3540480
+        },
+        {
+          "messages": 512,
+          "wall_ns": 749442200,
+          "process_cpu_ns": 718750000,
+          "wire_bytes_min": 6915,
+          "wire_bytes_max": 6915,
+          "wire_bytes_total": 3540480
+        },
+        {
+          "messages": 512,
+          "wall_ns": 765286700,
+          "process_cpu_ns": 734375000,
+          "wire_bytes_min": 6915,
+          "wire_bytes_max": 6915,
+          "wire_bytes_total": 3540480
+        },
+        {
+          "messages": 512,
+          "wall_ns": 649688200,
+          "process_cpu_ns": 625000000,
+          "wire_bytes_min": 6915,
+          "wire_bytes_max": 6915,
+          "wire_bytes_total": 3540480
+        },
+        {
+          "messages": 512,
+          "wall_ns": 670838800,
+          "process_cpu_ns": 640625000,
+          "wire_bytes_min": 6915,
+          "wire_bytes_max": 6915,
+          "wire_bytes_total": 3540480
+        },
+        {
+          "messages": 512,
+          "wall_ns": 860109000,
+          "process_cpu_ns": 828125000,
+          "wire_bytes_min": 6915,
+          "wire_bytes_max": 6915,
+          "wire_bytes_total": 3540480
+        }
+      ]
+    },
+    {
+      "mode": "v1_hybrid",
+      "scenario": "one_way",
+      "text_bytes": 128,
+      "median_wall_us_per_message": 54.94947509765625,
+      "median_cpu_us_per_message": 53.40576171875,
+      "samples": [
+        {
+          "messages": 8192,
+          "wall_ns": 441319200,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1984,
+          "wire_bytes_total": 16246016
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 439927400,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1984,
+          "wire_bytes_total": 16246016
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 454301300,
+          "process_cpu_ns": 406250000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1984,
+          "wire_bytes_total": 16246016
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 451047700,
+          "process_cpu_ns": 453125000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1984,
+          "wire_bytes_total": 16246016
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 450146100,
+          "process_cpu_ns": 437500000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1984,
+          "wire_bytes_total": 16246016
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 426743000,
+          "process_cpu_ns": 375000000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1984,
+          "wire_bytes_total": 16246016
+        },
+        {
+          "messages": 8192,
+          "wall_ns": 549779300,
+          "process_cpu_ns": 546875000,
+          "wire_bytes_min": 1982,
+          "wire_bytes_max": 1984,
+          "wire_bytes_total": 16246016
+        }
+      ]
+    },
+    {
+      "mode": "v1_hybrid",
+      "scenario": "one_way",
+      "text_bytes": 4096,
+      "median_wall_us_per_message": 98.132861328125,
+      "median_cpu_us_per_message": 95.367431640625,
+      "samples": [
+        {
+          "messages": 4096,
+          "wall_ns": 401952200,
+          "process_cpu_ns": 375000000,
+          "wire_bytes_min": 7274,
+          "wire_bytes_max": 7276,
+          "wire_bytes_total": 29799040
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 385951200,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 7274,
+          "wire_bytes_max": 7276,
+          "wire_bytes_total": 29799040
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 420857000,
+          "process_cpu_ns": 421875000,
+          "wire_bytes_min": 7274,
+          "wire_bytes_max": 7276,
+          "wire_bytes_total": 29799040
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 428788000,
+          "process_cpu_ns": 406250000,
+          "wire_bytes_min": 7274,
+          "wire_bytes_max": 7276,
+          "wire_bytes_total": 29799040
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 389667400,
+          "process_cpu_ns": 390625000,
+          "wire_bytes_min": 7274,
+          "wire_bytes_max": 7276,
+          "wire_bytes_total": 29799040
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 384488800,
+          "process_cpu_ns": 359375000,
+          "wire_bytes_min": 7274,
+          "wire_bytes_max": 7276,
+          "wire_bytes_total": 29799040
+        },
+        {
+          "messages": 4096,
+          "wall_ns": 413376800,
+          "process_cpu_ns": 421875000,
+          "wire_bytes_min": 7274,
+          "wire_bytes_max": 7276,
+          "wire_bytes_total": 29799040
+        }
+      ]
+    }
+  ]
+}

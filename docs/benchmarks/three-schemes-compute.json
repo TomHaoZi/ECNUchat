@@ -1,0 +1,529 @@
+{
+  "measured_at": "2026-11-26T14:06:45.444Z",
+  "runtime": "v24.22.3",
+  "v8": "13.6.233.17-node.63",
+  "os": "Windows 11 Home China",
+  "cpu": "Intel(R) Core(TM) i7-14650HX",
+  "clocks": "performance.now() elapsed milliseconds",
+  "arms": {
+    "F": "classic",
+    "E": "hybrid full",
+    "C": "hybrid authenticated reference"
+  },
+  "design": "All six arm orders repeated four times. Two discarded warm-up runs per arm. Fresh identities and prekeys per run.",
+  "cold": "Both-end bundle verification, session creation, first 128-byte message encryption/decryption, including authenticated receipt for C.",
+  "warm": "Ten sequential same-direction 128-byte message encrypt/decrypt pairs. C already confirmed.",
+  "boundary": "Includes UTF-8 JSON envelope roundtrip and plaintext equality check. Excludes key pool creation, UI, disk, directory I/O and relay.",
+  "sha256": {
+    "scripts/benchmark_crypto_phases.js": "132d0975b0cbb6ad20272e1a19b8c3772a8779b69cc14602fa887fa1d2a1875f",
+    "scripts/benchmark_v2.js": "ff2304dba6d3f8d2d54a568e8a02e1804a96e7ab2f2e61832e0d1dc943ee2ba3",
+    "v2/pwa/crypto.js": "ad92836a5267833218bb29b97a1a833fad9bda6745cc7c64d02c6e3c623bce4e",
+    "v2/pwa/crypto-pq.js": "24acbde4f441f1c13f7403fee3194631776a3eef8edb4954135c395962a53a33"
+  },
+  "runs": [
+    {
+      "block": 1,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 18.824500000000057,
+      "warm_ten_ms": 2.886099999999942
+    },
+    {
+      "block": 1,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 60.80959999999993,
+      "warm_ten_ms": 3.1373000000000957
+    },
+    {
+      "block": 1,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 61.502500000000055,
+      "warm_ten_ms": 2.1779999999998836
+    },
+    {
+      "block": 2,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 19.938100000000077,
+      "warm_ten_ms": 2.9664000000000215
+    },
+    {
+      "block": 2,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 60.87850000000003,
+      "warm_ten_ms": 2.0886999999997897
+    },
+    {
+      "block": 2,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 62.07629999999995,
+      "warm_ten_ms": 3.3782000000001062
+    },
+    {
+      "block": 3,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 60.75609999999983,
+      "warm_ten_ms": 2.913300000000163
+    },
+    {
+      "block": 3,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 19.345600000000104,
+      "warm_ten_ms": 2.278099999999995
+    },
+    {
+      "block": 3,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 61.25369999999998,
+      "warm_ten_ms": 2.470199999999977
+    },
+    {
+      "block": 4,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 58.358600000000024,
+      "warm_ten_ms": 2.7673999999999523
+    },
+    {
+      "block": 4,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 58.950199999999995,
+      "warm_ten_ms": 1.9156000000000404
+    },
+    {
+      "block": 4,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 18.604500000000144,
+      "warm_ten_ms": 3.297399999999925
+    },
+    {
+      "block": 5,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 60.88310000000024,
+      "warm_ten_ms": 2.5601999999998952
+    },
+    {
+      "block": 5,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 19.660899999999856,
+      "warm_ten_ms": 2.822599999999966
+    },
+    {
+      "block": 5,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 64.26569999999992,
+      "warm_ten_ms": 3.6325000000001637
+    },
+    {
+      "block": 6,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 62.76800000000003,
+      "warm_ten_ms": 2.7274999999999636
+    },
+    {
+      "block": 6,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 60.047000000000025,
+      "warm_ten_ms": 3.190299999999752
+    },
+    {
+      "block": 6,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 18.346399999999903,
+      "warm_ten_ms": 4.0767000000000735
+    },
+    {
+      "block": 7,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 18.29459999999972,
+      "warm_ten_ms": 3.6863000000003012
+    },
+    {
+      "block": 7,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 60.901200000000244,
+      "warm_ten_ms": 1.8515999999999622
+    },
+    {
+      "block": 7,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 57.94889999999987,
+      "warm_ten_ms": 2.113299999999981
+    },
+    {
+      "block": 8,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 18.700599999999667,
+      "warm_ten_ms": 2.5588000000002467
+    },
+    {
+      "block": 8,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 60.66980000000012,
+      "warm_ten_ms": 2.6621000000000095
+    },
+    {
+      "block": 8,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 59.1887999999999,
+      "warm_ten_ms": 2.3164999999999054
+    },
+    {
+      "block": 9,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 61.25829999999996,
+      "warm_ten_ms": 3.260699999999815
+    },
+    {
+      "block": 9,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 19.241399999999885,
+      "warm_ten_ms": 1.7526000000002568
+    },
+    {
+      "block": 9,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 61.158500000000004,
+      "warm_ten_ms": 2.9627999999997883
+    },
+    {
+      "block": 10,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 58.377899999999954,
+      "warm_ten_ms": 2.3528000000001157
+    },
+    {
+      "block": 10,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 59.064600000000155,
+      "warm_ten_ms": 2.515100000000075
+    },
+    {
+      "block": 10,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 23.127199999999903,
+      "warm_ten_ms": 3.5963000000001557
+    },
+    {
+      "block": 11,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 65.23719999999958,
+      "warm_ten_ms": 2.2585000000003674
+    },
+    {
+      "block": 11,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 18.790500000000065,
+      "warm_ten_ms": 2.728599999999915
+    },
+    {
+      "block": 11,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 59.50810000000001,
+      "warm_ten_ms": 2.1134000000001834
+    },
+    {
+      "block": 12,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 60.59389999999985,
+      "warm_ten_ms": 3.193199999999706
+    },
+    {
+      "block": 12,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 61.49339999999938,
+      "warm_ten_ms": 2.0156999999999243
+    },
+    {
+      "block": 12,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 19.277099999999336,
+      "warm_ten_ms": 2.1562000000003536
+    },
+    {
+      "block": 13,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 19.793499999999767,
+      "warm_ten_ms": 2.0374000000001615
+    },
+    {
+      "block": 13,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 60.172599999999875,
+      "warm_ten_ms": 3.099500000000262
+    },
+    {
+      "block": 13,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 61.48710000000028,
+      "warm_ten_ms": 2.855899999999565
+    },
+    {
+      "block": 14,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 19.368199999999888,
+      "warm_ten_ms": 3.024999999999636
+    },
+    {
+      "block": 14,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 61.387800000000425,
+      "warm_ten_ms": 3.1018000000003667
+    },
+    {
+      "block": 14,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 60.824499999999716,
+      "warm_ten_ms": 2.5439000000005763
+    },
+    {
+      "block": 15,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 61.453599999999824,
+      "warm_ten_ms": 3.0564000000003944
+    },
+    {
+      "block": 15,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 19.362199999999575,
+      "warm_ten_ms": 2.38130000000001
+    },
+    {
+      "block": 15,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 62.300999999999476,
+      "warm_ten_ms": 2.2411000000001877
+    },
+    {
+      "block": 16,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 61.02350000000024,
+      "warm_ten_ms": 2.44629999999961
+    },
+    {
+      "block": 16,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 65.31850000000031,
+      "warm_ten_ms": 2.283300000000054
+    },
+    {
+      "block": 16,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 18.27179999999953,
+      "warm_ten_ms": 2.6512000000002445
+    },
+    {
+      "block": 17,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 63.50160000000051,
+      "warm_ten_ms": 2.335099999999329
+    },
+    {
+      "block": 17,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 19.653400000000147,
+      "warm_ten_ms": 1.7789999999995416
+    },
+    {
+      "block": 17,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 62.249299999999494,
+      "warm_ten_ms": 5.346499999999651
+    },
+    {
+      "block": 18,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 61.86799999999948,
+      "warm_ten_ms": 2.5924000000004526
+    },
+    {
+      "block": 18,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 58.62840000000051,
+      "warm_ten_ms": 3.968499999999949
+    },
+    {
+      "block": 18,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 18.059000000000196,
+      "warm_ten_ms": 1.8059000000002925
+    },
+    {
+      "block": 19,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 19.307300000000396,
+      "warm_ten_ms": 2.274999999999636
+    },
+    {
+      "block": 19,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 60.681400000000394,
+      "warm_ten_ms": 2.0504999999993743
+    },
+    {
+      "block": 19,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 63.24029999999948,
+      "warm_ten_ms": 2.2291999999997643
+    },
+    {
+      "block": 20,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 18.85819999999967,
+      "warm_ten_ms": 2.6531999999997424
+    },
+    {
+      "block": 20,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 61.95520000000033,
+      "warm_ten_ms": 3.046299999999974
+    },
+    {
+      "block": 20,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 61.16219999999976,
+      "warm_ten_ms": 3.1024999999999636
+    },
+    {
+      "block": 21,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 61.55839999999989,
+      "warm_ten_ms": 3.3095000000002983
+    },
+    {
+      "block": 21,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 21.566399999999703,
+      "warm_ten_ms": 1.8931000000002314
+    },
+    {
+      "block": 21,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 61.66989999999987,
+      "warm_ten_ms": 2.7713000000003376
+    },
+    {
+      "block": 22,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 62.38310000000001,
+      "warm_ten_ms": 2.4501000000000204
+    },
+    {
+      "block": 22,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 62.009500000000116,
+      "warm_ten_ms": 2.4711000000006607
+    },
+    {
+      "block": 22,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 19.764799999999923,
+      "warm_ten_ms": 2.4680000000007567
+    },
+    {
+      "block": 23,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 61.2496000000001,
+      "warm_ten_ms": 3.2775999999994383
+    },
+    {
+      "block": 23,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 19.843399999999747,
+      "warm_ten_ms": 3.0916000000006534
+    },
+    {
+      "block": 23,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 61.16990000000078,
+      "warm_ten_ms": 5.007099999999809
+    },
+    {
+      "block": 24,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 63.16290000000026,
+      "warm_ten_ms": 4.016099999999824
+    },
+    {
+      "block": 24,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 62.787499999999454,
+      "warm_ten_ms": 2.235200000000077
+    },
+    {
+      "block": 24,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 19.580399999999827,
+      "warm_ten_ms": 3.4092000000000553
+    }
+  ]
+}

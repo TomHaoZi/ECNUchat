@@ -2,6 +2,10 @@
 
 利用椭圆曲线Diffie-Hellman协商会话密钥，采用AES-GCM加密消息并校验完整性，结合数字签名认证身份，实现防窃听、防篡改的安全即时通讯。
 
+本文介绍 Python 客户端（v1）。v2 可在 Windows 和浏览器中通过本地中继收发文字、拨打一对一语音。参见 [Windows 启动说明](v2/desktop/README.md) 和 [浏览器使用说明](v2/pwa/README.md)。
+
+三种加密方案在相同设备目录缓存下的首次建链、后续连发和计算耗时见[实验报告（PDF）](output/pdf/ECNUchat-通信流量优化报告.pdf)和[机理对比图](output/pdf/ECNUchat-三种方案机理对比.png)。
+
 X25519 就是椭圆曲线 Diffie-Hellman；每条消息用 AES-256-GCM 加密并校验完整性；Ed25519 数字签名认证身份和预密钥。X3DH 和双棘轮是把这三句话做出来的方法，写在下面的原理里，不是项目的另一个名字。
 
 ![alice、bob、carol 同时在线](docs/images/ui-three-clients.png)

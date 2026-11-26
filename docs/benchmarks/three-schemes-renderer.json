@@ -1,0 +1,292 @@
+{
+  "metric": "Sum of Chrome CDP Performance.TaskDuration, threadTicks, both renderer main threads (ms).",
+  "includes": "JS, DOM, UI and test-driver page tasks. Excludes network wait, native workers and relay CPU.",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "arms": {
+    "A": [
+      false,
+      false,
+      false
+    ],
+    "B": [
+      true,
+      false,
+      false
+    ],
+    "C": [
+      true,
+      true,
+      true
+    ],
+    "D": [
+      true,
+      true,
+      false
+    ],
+    "E": [
+      true,
+      false,
+      true
+    ],
+    "F": [
+      false,
+      false,
+      true
+    ]
+  },
+  "runs": [
+    {
+      "block": 1,
+      "position": 1,
+      "arm": "A",
+      "cold_ms": 47.473,
+      "warm_ten_ms": 56.14199999999999
+    },
+    {
+      "block": 1,
+      "position": 2,
+      "arm": "B",
+      "cold_ms": 100.499,
+      "warm_ten_ms": 55.60700000000001
+    },
+    {
+      "block": 1,
+      "position": 3,
+      "arm": "C",
+      "cold_ms": 100.574,
+      "warm_ten_ms": 44.16900000000001
+    },
+    {
+      "block": 1,
+      "position": 4,
+      "arm": "D",
+      "cold_ms": 100.33399999999999,
+      "warm_ten_ms": 55.13200000000002
+    },
+    {
+      "block": 1,
+      "position": 5,
+      "arm": "E",
+      "cold_ms": 97.872,
+      "warm_ten_ms": 45.537000000000006
+    },
+    {
+      "block": 1,
+      "position": 6,
+      "arm": "F",
+      "cold_ms": 46.315,
+      "warm_ten_ms": 41.56
+    },
+    {
+      "block": 2,
+      "position": 1,
+      "arm": "B",
+      "cold_ms": 101.792,
+      "warm_ten_ms": 58.57899999999998
+    },
+    {
+      "block": 2,
+      "position": 2,
+      "arm": "C",
+      "cold_ms": 102.21,
+      "warm_ten_ms": 45.634
+    },
+    {
+      "block": 2,
+      "position": 3,
+      "arm": "D",
+      "cold_ms": 102.116,
+      "warm_ten_ms": 56.412000000000006
+    },
+    {
+      "block": 2,
+      "position": 4,
+      "arm": "E",
+      "cold_ms": 101.831,
+      "warm_ten_ms": 45.605000000000004
+    },
+    {
+      "block": 2,
+      "position": 5,
+      "arm": "F",
+      "cold_ms": 47.386,
+      "warm_ten_ms": 41.881
+    },
+    {
+      "block": 2,
+      "position": 6,
+      "arm": "A",
+      "cold_ms": 48.24,
+      "warm_ten_ms": 59.03999999999999
+    },
+    {
+      "block": 3,
+      "position": 1,
+      "arm": "C",
+      "cold_ms": 100.51299999999999,
+      "warm_ten_ms": 43.96800000000002
+    },
+    {
+      "block": 3,
+      "position": 2,
+      "arm": "D",
+      "cold_ms": 101.08099999999999,
+      "warm_ten_ms": 60.123999999999995
+    },
+    {
+      "block": 3,
+      "position": 3,
+      "arm": "E",
+      "cold_ms": 97.976,
+      "warm_ten_ms": 45.45200000000001
+    },
+    {
+      "block": 3,
+      "position": 4,
+      "arm": "F",
+      "cold_ms": 46.747,
+      "warm_ten_ms": 40.915000000000006
+    },
+    {
+      "block": 3,
+      "position": 5,
+      "arm": "A",
+      "cold_ms": 48.078,
+      "warm_ten_ms": 52.768
+    },
+    {
+      "block": 3,
+      "position": 6,
+      "arm": "B",
+      "cold_ms": 100.33999999999999,
+      "warm_ten_ms": 56.57900000000001
+    },
+    {
+      "block": 4,
+      "position": 1,
+      "arm": "D",
+      "cold_ms": 98.91399999999999,
+      "warm_ten_ms": 57.09
+    },
+    {
+      "block": 4,
+      "position": 2,
+      "arm": "E",
+      "cold_ms": 98.13700000000001,
+      "warm_ten_ms": 45.69799999999999
+    },
+    {
+      "block": 4,
+      "position": 3,
+      "arm": "F",
+      "cold_ms": 47.10099999999999,
+      "warm_ten_ms": 40.16400000000001
+    },
+    {
+      "block": 4,
+      "position": 4,
+      "arm": "A",
+      "cold_ms": 47.028999999999996,
+      "warm_ten_ms": 51.822
+    },
+    {
+      "block": 4,
+      "position": 5,
+      "arm": "B",
+      "cold_ms": 99.582,
+      "warm_ten_ms": 56.70099999999998
+    },
+    {
+      "block": 4,
+      "position": 6,
+      "arm": "C",
+      "cold_ms": 101.75999999999999,
+      "warm_ten_ms": 43.94500000000001
+    },
+    {
+      "block": 5,
+      "position": 1,
+      "arm": "E",
+      "cold_ms": 99.052,
+      "warm_ten_ms": 44.124999999999986
+    },
+    {
+      "block": 5,
+      "position": 2,
+      "arm": "F",
+      "cold_ms": 46.25300000000001,
+      "warm_ten_ms": 40.394
+    },
+    {
+      "block": 5,
+      "position": 3,
+      "arm": "A",
+      "cold_ms": 47.278,
+      "warm_ten_ms": 53.38200000000001
+    },
+    {
+      "block": 5,
+      "position": 4,
+      "arm": "B",
+      "cold_ms": 107.01700000000001,
+      "warm_ten_ms": 56.03599999999997
+    },
+    {
+      "block": 5,
+      "position": 5,
+      "arm": "C",
+      "cold_ms": 100.891,
+      "warm_ten_ms": 48.297000000000025
+    },
+    {
+      "block": 5,
+      "position": 6,
+      "arm": "D",
+      "cold_ms": 99.938,
+      "warm_ten_ms": 57.897999999999996
+    },
+    {
+      "block": 6,
+      "position": 1,
+      "arm": "F",
+      "cold_ms": 46.535,
+      "warm_ten_ms": 40.56100000000001
+    },
+    {
+      "block": 6,
+      "position": 2,
+      "arm": "A",
+      "cold_ms": 46.564,
+      "warm_ten_ms": 55.37200000000001
+    },
+    {
+      "block": 6,
+      "position": 3,
+      "arm": "B",
+      "cold_ms": 101.33300000000001,
+      "warm_ten_ms": 56.905
+    },
+    {
+      "block": 6,
+      "position": 4,
+      "arm": "C",
+      "cold_ms": 113.72099999999999,
+      "warm_ten_ms": 45.19900000000001
+    },
+    {
+      "block": 6,
+      "position": 5,
+      "arm": "D",
+      "cold_ms": 106.271,
+      "warm_ten_ms": 70.08599999999998
+    },
+    {
+      "block": 6,
+      "position": 6,
+      "arm": "E",
+      "cold_ms": 116.768,
+      "warm_ten_ms": 49.64200000000001
+    }
+  ],
+  "browser": "Chrome/158.0.8127.38"
+}

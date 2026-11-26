@@ -1,0 +1,4444 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.11",
+  "arms": {
+    "A": [
+      false,
+      false,
+      false
+    ],
+    "B": [
+      true,
+      false,
+      false
+    ],
+    "C": [
+      true,
+      true,
+      true
+    ],
+    "D": [
+      true,
+      true,
+      false
+    ],
+    "E": [
+      true,
+      false,
+      true
+    ],
+    "F": [
+      false,
+      false,
+      true
+    ]
+  },
+  "order": "Six cyclic orders, one fresh browser process per block; new relay and two isolated profiles per arm.",
+  "units": "raw HTTP/1.1 bytes at the loopback relay; cold=friend-add through message 0 and polls; warm=ten 128-byte ASCII messages on the same chain plus two polls, excluding setup.",
+  "sha256": {
+    "v2/pwa/app.js": "0917c5ed368bd343fb113a35b77d47db944604f320e4d57b20937c63e5887d99",
+    "v2/pwa/crypto.js": "ad92836a5267833218bb29b97a1a833fad9bda6745cc7c64d02c6e3c623bce4e",
+    "v2/pwa/crypto-pq.js": "24acbde4f441f1c13f7403fee3194631776a3eef8edb4954135c395962a53a33",
+    "v2/pwa/directory.js": "81458df7f2c9dd3e50b3244b1de8d5275428609d64ff078523740c8c454d4e9b",
+    "v2/relay/relay.py": "f525e2080c7208a5a2bee0cfa49e2ecbc26a0e621b21a31c49161428e2da1eb0",
+    "v2/tests/benchmark_three_schemes.py": "a33868d555e2e3b7a2a5e2982c25012f4a3ea37393a514506c54c53c6e756d82",
+    "v2/tests/benchmark_directory_cache.py": "60f4d6897e2395613f43f3c24a69193fbfc62cb0ddaa36490f7b640e9f893fb6",
+    "v2/tests/test_pq_reference_browser.py": "ff8b607c9a0dab0fabb3e7ef9eb1ca85b3b6d636903693b8227e9b8cedfcebfc",
+    "v2/tests/test_voice_browser.py": "03727e931caac59169caffafe712664ab50a1064e4516559afc96ca27c8c0173"
+  },
+  "runs": [
+    {
+      "block": 1,
+      "position": 1,
+      "arm": "A",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 14163,
+        "body_bytes": 17443,
+        "request_http_bytes": 9132,
+        "response_http_bytes": 17181,
+        "http_bytes": 26313,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8064,
+            "body_bytes": 8064,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 8970,
+            "http_bytes": 10710
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1300,
+            "body_bytes": 1300,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 1952,
+            "http_bytes": 3140
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1490,
+            "response_http_bytes": 508,
+            "http_bytes": 1998
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 36838,
+        "body_bytes": 42809,
+        "request_http_bytes": 19169,
+        "response_http_bytes": 43570,
+        "http_bytes": 62739,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 25920,
+            "body_bytes": 25920,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 28940,
+            "http_bytes": 34740
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8898,
+            "body_bytes": 8898,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 9550,
+            "http_bytes": 10738
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 12181,
+            "response_http_bytes": 5080,
+            "http_bytes": 17261
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 1,
+      "position": 2,
+      "arm": "B",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 98120,
+        "body_bytes": 121019,
+        "request_http_bytes": 28753,
+        "response_http_bytes": 101143,
+        "http_bytes": 129896,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53799,
+            "body_bytes": 53799,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54708,
+            "http_bytes": 56448
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7405,
+            "body_bytes": 7405,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8057,
+            "http_bytes": 9245
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7590,
+            "response_http_bytes": 508,
+            "http_bytes": 8098
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 186868,
+        "body_bytes": 207339,
+        "request_http_bytes": 33679,
+        "response_http_bytes": 193611,
+        "http_bytes": 227290,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161450,
+            "body_bytes": 161450,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164480,
+            "http_bytes": 170280
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23398,
+            "body_bytes": 23398,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 24051,
+            "http_bytes": 25239
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 26691,
+            "response_http_bytes": 5080,
+            "http_bytes": 31771
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 1,
+      "position": 3,
+      "arm": "C",
+      "cold": {
+        "calls": 11,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 63609,
+        "body_bytes": 87055,
+        "request_http_bytes": 30057,
+        "response_http_bytes": 66959,
+        "http_bytes": 97016,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17947,
+            "body_bytes": 17947,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18250,
+            "http_bytes": 18830
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 221,
+            "body_bytes": 221,
+            "request_http_bytes": 625,
+            "response_http_bytes": 547,
+            "http_bytes": 1172
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8295,
+            "body_bytes": 8295,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8948,
+            "http_bytes": 10157
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 7216,
+            "response_body_bytes": 202,
+            "body_bytes": 7418,
+            "request_http_bytes": 7935,
+            "response_http_bytes": 533,
+            "http_bytes": 8468
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 287,
+            "response_body_bytes": 202,
+            "body_bytes": 489,
+            "request_http_bytes": 908,
+            "response_http_bytes": 508,
+            "http_bytes": 1416
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 11437,
+        "body_bytes": 17838,
+        "request_http_bytes": 14790,
+        "response_http_bytes": 15400,
+        "http_bytes": 30190,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9417,
+            "body_bytes": 9417,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 10070,
+            "http_bytes": 11279
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 13581,
+            "response_http_bytes": 5330,
+            "http_bytes": 18911
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 1,
+      "position": 4,
+      "arm": "D",
+      "cold": {
+        "calls": 12,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 99193,
+        "body_bytes": 122639,
+        "request_http_bytes": 30444,
+        "response_http_bytes": 102798,
+        "http_bytes": 133242,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53841,
+            "body_bytes": 53841,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54750,
+            "http_bytes": 56490
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8206,
+            "body_bytes": 8206,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8859,
+            "http_bytes": 10047
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 1046,
+            "response_http_bytes": 550,
+            "http_bytes": 1596
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 7503,
+            "response_body_bytes": 404,
+            "body_bytes": 7907,
+            "request_http_bytes": 8746,
+            "response_http_bytes": 1016,
+            "http_bytes": 9762
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 172938,
+        "body_bytes": 179339,
+        "request_http_bytes": 19599,
+        "response_http_bytes": 179680,
+        "http_bytes": 199279,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161590,
+            "body_bytes": 161590,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164620,
+            "http_bytes": 170420
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9328,
+            "body_bytes": 9328,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 9980,
+            "http_bytes": 11168
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 12611,
+            "response_http_bytes": 5080,
+            "http_bytes": 17691
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 1,
+      "position": 5,
+      "arm": "E",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 62565,
+        "body_bytes": 85464,
+        "request_http_bytes": 28366,
+        "response_http_bytes": 65334,
+        "http_bytes": 93700,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17933,
+            "body_bytes": 17933,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18236,
+            "http_bytes": 18816
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7494,
+            "body_bytes": 7494,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8147,
+            "http_bytes": 9356
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7687,
+            "response_http_bytes": 533,
+            "http_bytes": 8220
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 25507,
+        "body_bytes": 45978,
+        "request_http_bytes": 28870,
+        "response_http_bytes": 29471,
+        "http_bytes": 58341,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23487,
+            "body_bytes": 23487,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 24141,
+            "http_bytes": 25350
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 27661,
+            "response_http_bytes": 5330,
+            "http_bytes": 32991
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 1,
+      "position": 6,
+      "arm": "F",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 9098,
+        "body_bytes": 12378,
+        "request_http_bytes": 8745,
+        "response_http_bytes": 11864,
+        "http_bytes": 20609,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 2688,
+            "body_bytes": 2688,
+            "request_http_bytes": 580,
+            "response_http_bytes": 2990,
+            "http_bytes": 3570
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1389,
+            "body_bytes": 1389,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 2042,
+            "http_bytes": 3251
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1587,
+            "response_http_bytes": 533,
+            "http_bytes": 2120
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 11007,
+        "body_bytes": 16978,
+        "request_http_bytes": 14360,
+        "response_http_bytes": 14970,
+        "http_bytes": 29330,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8987,
+            "body_bytes": 8987,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 9640,
+            "http_bytes": 10849
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 13151,
+            "response_http_bytes": 5330,
+            "http_bytes": 18481
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 2,
+      "position": 1,
+      "arm": "B",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 98120,
+        "body_bytes": 121019,
+        "request_http_bytes": 28743,
+        "response_http_bytes": 101143,
+        "http_bytes": 129886,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53799,
+            "body_bytes": 53799,
+            "request_http_bytes": 1737,
+            "response_http_bytes": 54708,
+            "http_bytes": 56445
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7405,
+            "body_bytes": 7405,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 8057,
+            "http_bytes": 9243
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 526,
+            "response_http_bytes": 275,
+            "http_bytes": 801
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 522,
+            "response_http_bytes": 275,
+            "http_bytes": 797
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 667,
+            "response_http_bytes": 20908,
+            "http_bytes": 21575
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16516,
+            "response_http_bytes": 16412,
+            "http_bytes": 32928
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7589,
+            "response_http_bytes": 508,
+            "http_bytes": 8097
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 186868,
+        "body_bytes": 207339,
+        "request_http_bytes": 33657,
+        "response_http_bytes": 193611,
+        "http_bytes": 227268,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161450,
+            "body_bytes": 161450,
+            "request_http_bytes": 5790,
+            "response_http_bytes": 164480,
+            "http_bytes": 170270
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23398,
+            "body_bytes": 23398,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 24051,
+            "http_bytes": 25237
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 26681,
+            "response_http_bytes": 5080,
+            "http_bytes": 31761
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 2,
+      "position": 2,
+      "arm": "C",
+      "cold": {
+        "calls": 11,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 63609,
+        "body_bytes": 87055,
+        "request_http_bytes": 30057,
+        "response_http_bytes": 66959,
+        "http_bytes": 97016,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17947,
+            "body_bytes": 17947,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18250,
+            "http_bytes": 18830
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 221,
+            "body_bytes": 221,
+            "request_http_bytes": 625,
+            "response_http_bytes": 547,
+            "http_bytes": 1172
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8295,
+            "body_bytes": 8295,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8948,
+            "http_bytes": 10157
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 7216,
+            "response_body_bytes": 202,
+            "body_bytes": 7418,
+            "request_http_bytes": 7935,
+            "response_http_bytes": 533,
+            "http_bytes": 8468
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 287,
+            "response_body_bytes": 202,
+            "body_bytes": 489,
+            "request_http_bytes": 908,
+            "response_http_bytes": 508,
+            "http_bytes": 1416
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 11437,
+        "body_bytes": 17838,
+        "request_http_bytes": 14790,
+        "response_http_bytes": 15400,
+        "http_bytes": 30190,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9417,
+            "body_bytes": 9417,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 10070,
+            "http_bytes": 11279
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 13581,
+            "response_http_bytes": 5330,
+            "http_bytes": 18911
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 2,
+      "position": 3,
+      "arm": "D",
+      "cold": {
+        "calls": 12,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 99193,
+        "body_bytes": 122639,
+        "request_http_bytes": 30444,
+        "response_http_bytes": 102798,
+        "http_bytes": 133242,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53841,
+            "body_bytes": 53841,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54750,
+            "http_bytes": 56490
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8206,
+            "body_bytes": 8206,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8859,
+            "http_bytes": 10047
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 1046,
+            "response_http_bytes": 550,
+            "http_bytes": 1596
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 7503,
+            "response_body_bytes": 404,
+            "body_bytes": 7907,
+            "request_http_bytes": 8746,
+            "response_http_bytes": 1016,
+            "http_bytes": 9762
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 172938,
+        "body_bytes": 179339,
+        "request_http_bytes": 19599,
+        "response_http_bytes": 179680,
+        "http_bytes": 199279,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161590,
+            "body_bytes": 161590,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164620,
+            "http_bytes": 170420
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9328,
+            "body_bytes": 9328,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 9980,
+            "http_bytes": 11168
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 12611,
+            "response_http_bytes": 5080,
+            "http_bytes": 17691
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 2,
+      "position": 4,
+      "arm": "E",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 62565,
+        "body_bytes": 85464,
+        "request_http_bytes": 28366,
+        "response_http_bytes": 65334,
+        "http_bytes": 93700,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17933,
+            "body_bytes": 17933,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18236,
+            "http_bytes": 18816
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7494,
+            "body_bytes": 7494,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8147,
+            "http_bytes": 9356
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7687,
+            "response_http_bytes": 533,
+            "http_bytes": 8220
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 25507,
+        "body_bytes": 45978,
+        "request_http_bytes": 28870,
+        "response_http_bytes": 29471,
+        "http_bytes": 58341,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23487,
+            "body_bytes": 23487,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 24141,
+            "http_bytes": 25350
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 27661,
+            "response_http_bytes": 5330,
+            "http_bytes": 32991
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 2,
+      "position": 5,
+      "arm": "F",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 9098,
+        "body_bytes": 12378,
+        "request_http_bytes": 8745,
+        "response_http_bytes": 11864,
+        "http_bytes": 20609,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 2688,
+            "body_bytes": 2688,
+            "request_http_bytes": 580,
+            "response_http_bytes": 2990,
+            "http_bytes": 3570
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1389,
+            "body_bytes": 1389,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 2042,
+            "http_bytes": 3251
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1587,
+            "response_http_bytes": 533,
+            "http_bytes": 2120
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 11007,
+        "body_bytes": 16978,
+        "request_http_bytes": 14360,
+        "response_http_bytes": 14970,
+        "http_bytes": 29330,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8987,
+            "body_bytes": 8987,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 9640,
+            "http_bytes": 10849
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 13151,
+            "response_http_bytes": 5330,
+            "http_bytes": 18481
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 2,
+      "position": 6,
+      "arm": "A",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 14163,
+        "body_bytes": 17443,
+        "request_http_bytes": 9132,
+        "response_http_bytes": 17181,
+        "http_bytes": 26313,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8064,
+            "body_bytes": 8064,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 8970,
+            "http_bytes": 10710
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1300,
+            "body_bytes": 1300,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 1952,
+            "http_bytes": 3140
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1490,
+            "response_http_bytes": 508,
+            "http_bytes": 1998
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 36838,
+        "body_bytes": 42809,
+        "request_http_bytes": 19169,
+        "response_http_bytes": 43570,
+        "http_bytes": 62739,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 25920,
+            "body_bytes": 25920,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 28940,
+            "http_bytes": 34740
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8898,
+            "body_bytes": 8898,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 9550,
+            "http_bytes": 10738
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 12181,
+            "response_http_bytes": 5080,
+            "http_bytes": 17261
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 3,
+      "position": 1,
+      "arm": "C",
+      "cold": {
+        "calls": 11,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 63609,
+        "body_bytes": 87055,
+        "request_http_bytes": 30057,
+        "response_http_bytes": 66959,
+        "http_bytes": 97016,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17947,
+            "body_bytes": 17947,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18250,
+            "http_bytes": 18830
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 221,
+            "body_bytes": 221,
+            "request_http_bytes": 625,
+            "response_http_bytes": 547,
+            "http_bytes": 1172
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8295,
+            "body_bytes": 8295,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8948,
+            "http_bytes": 10157
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 7216,
+            "response_body_bytes": 202,
+            "body_bytes": 7418,
+            "request_http_bytes": 7935,
+            "response_http_bytes": 533,
+            "http_bytes": 8468
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 287,
+            "response_body_bytes": 202,
+            "body_bytes": 489,
+            "request_http_bytes": 908,
+            "response_http_bytes": 508,
+            "http_bytes": 1416
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 11437,
+        "body_bytes": 17838,
+        "request_http_bytes": 14790,
+        "response_http_bytes": 15400,
+        "http_bytes": 30190,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9417,
+            "body_bytes": 9417,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 10070,
+            "http_bytes": 11279
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 13581,
+            "response_http_bytes": 5330,
+            "http_bytes": 18911
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 3,
+      "position": 2,
+      "arm": "D",
+      "cold": {
+        "calls": 12,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 99193,
+        "body_bytes": 122639,
+        "request_http_bytes": 30432,
+        "response_http_bytes": 102798,
+        "http_bytes": 133230,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53841,
+            "body_bytes": 53841,
+            "request_http_bytes": 1737,
+            "response_http_bytes": 54750,
+            "http_bytes": 56487
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8206,
+            "body_bytes": 8206,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 8859,
+            "http_bytes": 10045
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 526,
+            "response_http_bytes": 275,
+            "http_bytes": 801
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 1044,
+            "response_http_bytes": 550,
+            "http_bytes": 1594
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 667,
+            "response_http_bytes": 20922,
+            "http_bytes": 21589
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16528,
+            "response_http_bytes": 16426,
+            "http_bytes": 32954
+          },
+          "POST /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 7503,
+            "response_body_bytes": 404,
+            "body_bytes": 7907,
+            "request_http_bytes": 8744,
+            "response_http_bytes": 1016,
+            "http_bytes": 9760
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 172938,
+        "body_bytes": 179339,
+        "request_http_bytes": 19577,
+        "response_http_bytes": 179680,
+        "http_bytes": 199257,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161590,
+            "body_bytes": 161590,
+            "request_http_bytes": 5790,
+            "response_http_bytes": 164620,
+            "http_bytes": 170410
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9328,
+            "body_bytes": 9328,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 9980,
+            "http_bytes": 11166
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 12601,
+            "response_http_bytes": 5080,
+            "http_bytes": 17681
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 3,
+      "position": 3,
+      "arm": "E",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 62565,
+        "body_bytes": 85464,
+        "request_http_bytes": 28366,
+        "response_http_bytes": 65334,
+        "http_bytes": 93700,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17933,
+            "body_bytes": 17933,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18236,
+            "http_bytes": 18816
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7494,
+            "body_bytes": 7494,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8147,
+            "http_bytes": 9356
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7687,
+            "response_http_bytes": 533,
+            "http_bytes": 8220
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 25507,
+        "body_bytes": 45978,
+        "request_http_bytes": 28870,
+        "response_http_bytes": 29471,
+        "http_bytes": 58341,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23487,
+            "body_bytes": 23487,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 24141,
+            "http_bytes": 25350
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 27661,
+            "response_http_bytes": 5330,
+            "http_bytes": 32991
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 3,
+      "position": 4,
+      "arm": "F",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 9098,
+        "body_bytes": 12378,
+        "request_http_bytes": 8745,
+        "response_http_bytes": 11864,
+        "http_bytes": 20609,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 2688,
+            "body_bytes": 2688,
+            "request_http_bytes": 580,
+            "response_http_bytes": 2990,
+            "http_bytes": 3570
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1389,
+            "body_bytes": 1389,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 2042,
+            "http_bytes": 3251
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1587,
+            "response_http_bytes": 533,
+            "http_bytes": 2120
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 11007,
+        "body_bytes": 16978,
+        "request_http_bytes": 14360,
+        "response_http_bytes": 14970,
+        "http_bytes": 29330,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8987,
+            "body_bytes": 8987,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 9640,
+            "http_bytes": 10849
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 13151,
+            "response_http_bytes": 5330,
+            "http_bytes": 18481
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 3,
+      "position": 5,
+      "arm": "A",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 14163,
+        "body_bytes": 17443,
+        "request_http_bytes": 9132,
+        "response_http_bytes": 17181,
+        "http_bytes": 26313,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8064,
+            "body_bytes": 8064,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 8970,
+            "http_bytes": 10710
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1300,
+            "body_bytes": 1300,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 1952,
+            "http_bytes": 3140
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1490,
+            "response_http_bytes": 508,
+            "http_bytes": 1998
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 36838,
+        "body_bytes": 42809,
+        "request_http_bytes": 19169,
+        "response_http_bytes": 43570,
+        "http_bytes": 62739,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 25920,
+            "body_bytes": 25920,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 28940,
+            "http_bytes": 34740
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8898,
+            "body_bytes": 8898,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 9550,
+            "http_bytes": 10738
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 12181,
+            "response_http_bytes": 5080,
+            "http_bytes": 17261
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 3,
+      "position": 6,
+      "arm": "B",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 98120,
+        "body_bytes": 121019,
+        "request_http_bytes": 28753,
+        "response_http_bytes": 101143,
+        "http_bytes": 129896,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53799,
+            "body_bytes": 53799,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54708,
+            "http_bytes": 56448
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7405,
+            "body_bytes": 7405,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8057,
+            "http_bytes": 9245
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7590,
+            "response_http_bytes": 508,
+            "http_bytes": 8098
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 186868,
+        "body_bytes": 207339,
+        "request_http_bytes": 33679,
+        "response_http_bytes": 193611,
+        "http_bytes": 227290,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161450,
+            "body_bytes": 161450,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164480,
+            "http_bytes": 170280
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23398,
+            "body_bytes": 23398,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 24051,
+            "http_bytes": 25239
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 26691,
+            "response_http_bytes": 5080,
+            "http_bytes": 31771
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 4,
+      "position": 1,
+      "arm": "D",
+      "cold": {
+        "calls": 12,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 99193,
+        "body_bytes": 122639,
+        "request_http_bytes": 30444,
+        "response_http_bytes": 102798,
+        "http_bytes": 133242,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53841,
+            "body_bytes": 53841,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54750,
+            "http_bytes": 56490
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8206,
+            "body_bytes": 8206,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8859,
+            "http_bytes": 10047
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 1046,
+            "response_http_bytes": 550,
+            "http_bytes": 1596
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 7503,
+            "response_body_bytes": 404,
+            "body_bytes": 7907,
+            "request_http_bytes": 8746,
+            "response_http_bytes": 1016,
+            "http_bytes": 9762
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 172938,
+        "body_bytes": 179339,
+        "request_http_bytes": 19599,
+        "response_http_bytes": 179680,
+        "http_bytes": 199279,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161590,
+            "body_bytes": 161590,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164620,
+            "http_bytes": 170420
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9328,
+            "body_bytes": 9328,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 9980,
+            "http_bytes": 11168
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 12611,
+            "response_http_bytes": 5080,
+            "http_bytes": 17691
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 4,
+      "position": 2,
+      "arm": "E",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 62565,
+        "body_bytes": 85464,
+        "request_http_bytes": 28366,
+        "response_http_bytes": 65334,
+        "http_bytes": 93700,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17933,
+            "body_bytes": 17933,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18236,
+            "http_bytes": 18816
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7494,
+            "body_bytes": 7494,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8147,
+            "http_bytes": 9356
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7687,
+            "response_http_bytes": 533,
+            "http_bytes": 8220
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 25507,
+        "body_bytes": 45978,
+        "request_http_bytes": 28870,
+        "response_http_bytes": 29471,
+        "http_bytes": 58341,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23487,
+            "body_bytes": 23487,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 24141,
+            "http_bytes": 25350
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 27661,
+            "response_http_bytes": 5330,
+            "http_bytes": 32991
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 4,
+      "position": 3,
+      "arm": "F",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 9098,
+        "body_bytes": 12378,
+        "request_http_bytes": 8745,
+        "response_http_bytes": 11864,
+        "http_bytes": 20609,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 2688,
+            "body_bytes": 2688,
+            "request_http_bytes": 580,
+            "response_http_bytes": 2990,
+            "http_bytes": 3570
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1389,
+            "body_bytes": 1389,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 2042,
+            "http_bytes": 3251
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1587,
+            "response_http_bytes": 533,
+            "http_bytes": 2120
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 11007,
+        "body_bytes": 16978,
+        "request_http_bytes": 14360,
+        "response_http_bytes": 14970,
+        "http_bytes": 29330,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8987,
+            "body_bytes": 8987,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 9640,
+            "http_bytes": 10849
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 13151,
+            "response_http_bytes": 5330,
+            "http_bytes": 18481
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 4,
+      "position": 4,
+      "arm": "A",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 14163,
+        "body_bytes": 17443,
+        "request_http_bytes": 9122,
+        "response_http_bytes": 17181,
+        "http_bytes": 26303,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8064,
+            "body_bytes": 8064,
+            "request_http_bytes": 1737,
+            "response_http_bytes": 8970,
+            "http_bytes": 10707
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1300,
+            "body_bytes": 1300,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 1952,
+            "http_bytes": 3138
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 526,
+            "response_http_bytes": 275,
+            "http_bytes": 801
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 522,
+            "response_http_bytes": 275,
+            "http_bytes": 797
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 667,
+            "response_http_bytes": 2343,
+            "http_bytes": 3010
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2995,
+            "response_http_bytes": 2858,
+            "http_bytes": 5853
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1489,
+            "response_http_bytes": 508,
+            "http_bytes": 1997
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 36838,
+        "body_bytes": 42809,
+        "request_http_bytes": 19147,
+        "response_http_bytes": 43570,
+        "http_bytes": 62717,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 25920,
+            "body_bytes": 25920,
+            "request_http_bytes": 5790,
+            "response_http_bytes": 28940,
+            "http_bytes": 34730
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8898,
+            "body_bytes": 8898,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 9550,
+            "http_bytes": 10736
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 12171,
+            "response_http_bytes": 5080,
+            "http_bytes": 17251
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 4,
+      "position": 5,
+      "arm": "B",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 98120,
+        "body_bytes": 121019,
+        "request_http_bytes": 28753,
+        "response_http_bytes": 101143,
+        "http_bytes": 129896,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53799,
+            "body_bytes": 53799,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54708,
+            "http_bytes": 56448
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7405,
+            "body_bytes": 7405,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8057,
+            "http_bytes": 9245
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7590,
+            "response_http_bytes": 508,
+            "http_bytes": 8098
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 186868,
+        "body_bytes": 207339,
+        "request_http_bytes": 33679,
+        "response_http_bytes": 193611,
+        "http_bytes": 227290,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161450,
+            "body_bytes": 161450,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164480,
+            "http_bytes": 170280
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23398,
+            "body_bytes": 23398,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 24051,
+            "http_bytes": 25239
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 26691,
+            "response_http_bytes": 5080,
+            "http_bytes": 31771
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 4,
+      "position": 6,
+      "arm": "C",
+      "cold": {
+        "calls": 11,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 63609,
+        "body_bytes": 87055,
+        "request_http_bytes": 30046,
+        "response_http_bytes": 66959,
+        "http_bytes": 97005,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17947,
+            "body_bytes": 17947,
+            "request_http_bytes": 579,
+            "response_http_bytes": 18250,
+            "http_bytes": 18829
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 221,
+            "body_bytes": 221,
+            "request_http_bytes": 624,
+            "response_http_bytes": 547,
+            "http_bytes": 1171
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8295,
+            "body_bytes": 8295,
+            "request_http_bytes": 1207,
+            "response_http_bytes": 8948,
+            "http_bytes": 10155
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 526,
+            "response_http_bytes": 275,
+            "http_bytes": 801
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 552,
+            "response_http_bytes": 275,
+            "http_bytes": 827
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 522,
+            "response_http_bytes": 275,
+            "http_bytes": 797
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 667,
+            "response_http_bytes": 20922,
+            "http_bytes": 21589
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16528,
+            "response_http_bytes": 16426,
+            "http_bytes": 32954
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 7216,
+            "response_body_bytes": 202,
+            "body_bytes": 7418,
+            "request_http_bytes": 7934,
+            "response_http_bytes": 533,
+            "http_bytes": 8467
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 287,
+            "response_body_bytes": 202,
+            "body_bytes": 489,
+            "request_http_bytes": 907,
+            "response_http_bytes": 508,
+            "http_bytes": 1415
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 11437,
+        "body_bytes": 17838,
+        "request_http_bytes": 14778,
+        "response_http_bytes": 15400,
+        "http_bytes": 30178,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9417,
+            "body_bytes": 9417,
+            "request_http_bytes": 1207,
+            "response_http_bytes": 10070,
+            "http_bytes": 11277
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 13571,
+            "response_http_bytes": 5330,
+            "http_bytes": 18901
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 5,
+      "position": 1,
+      "arm": "E",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 62565,
+        "body_bytes": 85464,
+        "request_http_bytes": 28357,
+        "response_http_bytes": 65334,
+        "http_bytes": 93691,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17933,
+            "body_bytes": 17933,
+            "request_http_bytes": 579,
+            "response_http_bytes": 18236,
+            "http_bytes": 18815
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 624,
+            "response_http_bytes": 548,
+            "http_bytes": 1172
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7494,
+            "body_bytes": 7494,
+            "request_http_bytes": 1207,
+            "response_http_bytes": 8147,
+            "http_bytes": 9354
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 526,
+            "response_http_bytes": 275,
+            "http_bytes": 801
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 552,
+            "response_http_bytes": 275,
+            "http_bytes": 827
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 667,
+            "response_http_bytes": 20908,
+            "http_bytes": 21575
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16516,
+            "response_http_bytes": 16412,
+            "http_bytes": 32928
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7686,
+            "response_http_bytes": 533,
+            "http_bytes": 8219
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 25507,
+        "body_bytes": 45978,
+        "request_http_bytes": 28858,
+        "response_http_bytes": 29471,
+        "http_bytes": 58329,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23487,
+            "body_bytes": 23487,
+            "request_http_bytes": 1207,
+            "response_http_bytes": 24141,
+            "http_bytes": 25348
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 27651,
+            "response_http_bytes": 5330,
+            "http_bytes": 32981
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 5,
+      "position": 2,
+      "arm": "F",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 9098,
+        "body_bytes": 12378,
+        "request_http_bytes": 8745,
+        "response_http_bytes": 11864,
+        "http_bytes": 20609,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 2688,
+            "body_bytes": 2688,
+            "request_http_bytes": 580,
+            "response_http_bytes": 2990,
+            "http_bytes": 3570
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 625,
+            "response_http_bytes": 548,
+            "http_bytes": 1173
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1389,
+            "body_bytes": 1389,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 2042,
+            "http_bytes": 3251
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 668,
+            "response_http_bytes": 2343,
+            "http_bytes": 3011
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2996,
+            "response_http_bytes": 2858,
+            "http_bytes": 5854
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1587,
+            "response_http_bytes": 533,
+            "http_bytes": 2120
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 11007,
+        "body_bytes": 16978,
+        "request_http_bytes": 14360,
+        "response_http_bytes": 14970,
+        "http_bytes": 29330,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8987,
+            "body_bytes": 8987,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 9640,
+            "http_bytes": 10849
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 13151,
+            "response_http_bytes": 5330,
+            "http_bytes": 18481
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 5,
+      "position": 3,
+      "arm": "A",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 14163,
+        "body_bytes": 17443,
+        "request_http_bytes": 9122,
+        "response_http_bytes": 17181,
+        "http_bytes": 26303,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8064,
+            "body_bytes": 8064,
+            "request_http_bytes": 1737,
+            "response_http_bytes": 8970,
+            "http_bytes": 10707
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1300,
+            "body_bytes": 1300,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 1952,
+            "http_bytes": 3138
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 526,
+            "response_http_bytes": 275,
+            "http_bytes": 801
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 522,
+            "response_http_bytes": 275,
+            "http_bytes": 797
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 667,
+            "response_http_bytes": 2343,
+            "http_bytes": 3010
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2995,
+            "response_http_bytes": 2858,
+            "http_bytes": 5853
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1489,
+            "response_http_bytes": 508,
+            "http_bytes": 1997
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 36838,
+        "body_bytes": 42809,
+        "request_http_bytes": 19147,
+        "response_http_bytes": 43570,
+        "http_bytes": 62717,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 25920,
+            "body_bytes": 25920,
+            "request_http_bytes": 5790,
+            "response_http_bytes": 28940,
+            "http_bytes": 34730
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8898,
+            "body_bytes": 8898,
+            "request_http_bytes": 1186,
+            "response_http_bytes": 9550,
+            "http_bytes": 10736
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 12171,
+            "response_http_bytes": 5080,
+            "http_bytes": 17251
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 5,
+      "position": 4,
+      "arm": "B",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 98120,
+        "body_bytes": 121019,
+        "request_http_bytes": 28753,
+        "response_http_bytes": 101143,
+        "http_bytes": 129896,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53799,
+            "body_bytes": 53799,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54708,
+            "http_bytes": 56448
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7405,
+            "body_bytes": 7405,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8057,
+            "http_bytes": 9245
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20908,
+            "http_bytes": 21576
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16517,
+            "response_http_bytes": 16412,
+            "http_bytes": 32929
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7590,
+            "response_http_bytes": 508,
+            "http_bytes": 8098
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 186868,
+        "body_bytes": 207339,
+        "request_http_bytes": 33679,
+        "response_http_bytes": 193611,
+        "http_bytes": 227290,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161450,
+            "body_bytes": 161450,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164480,
+            "http_bytes": 170280
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23398,
+            "body_bytes": 23398,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 24051,
+            "http_bytes": 25239
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 26691,
+            "response_http_bytes": 5080,
+            "http_bytes": 31771
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 5,
+      "position": 5,
+      "arm": "C",
+      "cold": {
+        "calls": 11,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 63609,
+        "body_bytes": 87055,
+        "request_http_bytes": 30057,
+        "response_http_bytes": 66959,
+        "http_bytes": 97016,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17947,
+            "body_bytes": 17947,
+            "request_http_bytes": 580,
+            "response_http_bytes": 18250,
+            "http_bytes": 18830
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 221,
+            "body_bytes": 221,
+            "request_http_bytes": 625,
+            "response_http_bytes": 547,
+            "http_bytes": 1172
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8295,
+            "body_bytes": 8295,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 8948,
+            "http_bytes": 10157
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 553,
+            "response_http_bytes": 275,
+            "http_bytes": 828
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 523,
+            "response_http_bytes": 275,
+            "http_bytes": 798
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 7216,
+            "response_body_bytes": 202,
+            "body_bytes": 7418,
+            "request_http_bytes": 7935,
+            "response_http_bytes": 533,
+            "http_bytes": 8468
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 287,
+            "response_body_bytes": 202,
+            "body_bytes": 489,
+            "request_http_bytes": 908,
+            "response_http_bytes": 508,
+            "http_bytes": 1416
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 11437,
+        "body_bytes": 17838,
+        "request_http_bytes": 14790,
+        "response_http_bytes": 15400,
+        "http_bytes": 30190,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9417,
+            "body_bytes": 9417,
+            "request_http_bytes": 1209,
+            "response_http_bytes": 10070,
+            "http_bytes": 11279
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 13581,
+            "response_http_bytes": 5330,
+            "http_bytes": 18911
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 5,
+      "position": 6,
+      "arm": "D",
+      "cold": {
+        "calls": 12,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 99193,
+        "body_bytes": 122639,
+        "request_http_bytes": 30444,
+        "response_http_bytes": 102798,
+        "http_bytes": 133242,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53841,
+            "body_bytes": 53841,
+            "request_http_bytes": 1740,
+            "response_http_bytes": 54750,
+            "http_bytes": 56490
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8206,
+            "body_bytes": 8206,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 8859,
+            "http_bytes": 10047
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 527,
+            "response_http_bytes": 275,
+            "http_bytes": 802
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 1046,
+            "response_http_bytes": 550,
+            "http_bytes": 1596
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 668,
+            "response_http_bytes": 20922,
+            "http_bytes": 21590
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16529,
+            "response_http_bytes": 16426,
+            "http_bytes": 32955
+          },
+          "POST /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 7503,
+            "response_body_bytes": 404,
+            "body_bytes": 7907,
+            "request_http_bytes": 8746,
+            "response_http_bytes": 1016,
+            "http_bytes": 9762
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 172938,
+        "body_bytes": 179339,
+        "request_http_bytes": 19599,
+        "response_http_bytes": 179680,
+        "http_bytes": 199279,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161590,
+            "body_bytes": 161590,
+            "request_http_bytes": 5800,
+            "response_http_bytes": 164620,
+            "http_bytes": 170420
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9328,
+            "body_bytes": 9328,
+            "request_http_bytes": 1188,
+            "response_http_bytes": 9980,
+            "http_bytes": 11168
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 12611,
+            "response_http_bytes": 5080,
+            "http_bytes": 17691
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 6,
+      "position": 1,
+      "arm": "F",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 9098,
+        "body_bytes": 12378,
+        "request_http_bytes": 8718,
+        "response_http_bytes": 11864,
+        "http_bytes": 20582,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 2688,
+            "body_bytes": 2688,
+            "request_http_bytes": 577,
+            "response_http_bytes": 2990,
+            "http_bytes": 3567
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 622,
+            "response_http_bytes": 548,
+            "http_bytes": 1170
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1389,
+            "body_bytes": 1389,
+            "request_http_bytes": 1203,
+            "response_http_bytes": 2042,
+            "http_bytes": 3245
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 524,
+            "response_http_bytes": 275,
+            "http_bytes": 799
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 550,
+            "response_http_bytes": 275,
+            "http_bytes": 825
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 665,
+            "response_http_bytes": 2343,
+            "http_bytes": 3008
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2993,
+            "response_http_bytes": 2858,
+            "http_bytes": 5851
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1584,
+            "response_http_bytes": 533,
+            "http_bytes": 2117
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 11007,
+        "body_bytes": 16978,
+        "request_http_bytes": 14324,
+        "response_http_bytes": 14970,
+        "http_bytes": 29294,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8987,
+            "body_bytes": 8987,
+            "request_http_bytes": 1203,
+            "response_http_bytes": 9640,
+            "http_bytes": 10843
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 13121,
+            "response_http_bytes": 5330,
+            "http_bytes": 18451
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 6,
+      "position": 2,
+      "arm": "A",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 3280,
+        "response_body_bytes": 14163,
+        "body_bytes": 17443,
+        "request_http_bytes": 9112,
+        "response_http_bytes": 17181,
+        "http_bytes": 26293,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8064,
+            "body_bytes": 8064,
+            "request_http_bytes": 1734,
+            "response_http_bytes": 8970,
+            "http_bytes": 10704
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 1300,
+            "body_bytes": 1300,
+            "request_http_bytes": 1184,
+            "response_http_bytes": 1952,
+            "http_bytes": 3136
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 525,
+            "response_http_bytes": 275,
+            "http_bytes": 800
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 521,
+            "response_http_bytes": 275,
+            "http_bytes": 796
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 2041,
+            "body_bytes": 2085,
+            "request_http_bytes": 666,
+            "response_http_bytes": 2343,
+            "http_bytes": 3009
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 2367,
+            "response_body_bytes": 2556,
+            "body_bytes": 4923,
+            "request_http_bytes": 2994,
+            "response_http_bytes": 2858,
+            "http_bytes": 5852
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 869,
+            "response_body_bytes": 202,
+            "body_bytes": 1071,
+            "request_http_bytes": 1488,
+            "response_http_bytes": 508,
+            "http_bytes": 1996
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 5971,
+        "response_body_bytes": 36838,
+        "body_bytes": 42809,
+        "request_http_bytes": 19125,
+        "response_http_bytes": 43570,
+        "http_bytes": 62695,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 25920,
+            "body_bytes": 25920,
+            "request_http_bytes": 5780,
+            "response_http_bytes": 28940,
+            "http_bytes": 34720
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8898,
+            "body_bytes": 8898,
+            "request_http_bytes": 1184,
+            "response_http_bytes": 9550,
+            "http_bytes": 10734
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 5971,
+            "response_body_bytes": 2020,
+            "body_bytes": 7991,
+            "request_http_bytes": 12161,
+            "response_http_bytes": 5080,
+            "http_bytes": 17241
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 5971,
+      "delivered": 10
+    },
+    {
+      "block": 6,
+      "position": 3,
+      "arm": "B",
+      "cold": {
+        "calls": 10,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 98120,
+        "body_bytes": 121019,
+        "request_http_bytes": 28733,
+        "response_http_bytes": 101143,
+        "http_bytes": 129876,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53799,
+            "body_bytes": 53799,
+            "request_http_bytes": 1734,
+            "response_http_bytes": 54708,
+            "http_bytes": 56442
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7405,
+            "body_bytes": 7405,
+            "request_http_bytes": 1184,
+            "response_http_bytes": 8057,
+            "http_bytes": 9241
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 525,
+            "response_http_bytes": 275,
+            "http_bytes": 800
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 521,
+            "response_http_bytes": 275,
+            "http_bytes": 796
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 666,
+            "response_http_bytes": 20908,
+            "http_bytes": 21574
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16515,
+            "response_http_bytes": 16412,
+            "http_bytes": 32927
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7588,
+            "response_http_bytes": 508,
+            "http_bytes": 8096
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 186868,
+        "body_bytes": 207339,
+        "request_http_bytes": 33635,
+        "response_http_bytes": 193611,
+        "http_bytes": 227246,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161450,
+            "body_bytes": 161450,
+            "request_http_bytes": 5780,
+            "response_http_bytes": 164480,
+            "http_bytes": 170260
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23398,
+            "body_bytes": 23398,
+            "request_http_bytes": 1184,
+            "response_http_bytes": 24051,
+            "http_bytes": 25235
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 26671,
+            "response_http_bytes": 5080,
+            "http_bytes": 31751
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    },
+    {
+      "block": 6,
+      "position": 4,
+      "arm": "C",
+      "cold": {
+        "calls": 11,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 63609,
+        "body_bytes": 87055,
+        "request_http_bytes": 30035,
+        "response_http_bytes": 66959,
+        "http_bytes": 96994,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17947,
+            "body_bytes": 17947,
+            "request_http_bytes": 578,
+            "response_http_bytes": 18250,
+            "http_bytes": 18828
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 221,
+            "body_bytes": 221,
+            "request_http_bytes": 623,
+            "response_http_bytes": 547,
+            "http_bytes": 1170
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8295,
+            "body_bytes": 8295,
+            "request_http_bytes": 1205,
+            "response_http_bytes": 8948,
+            "http_bytes": 10153
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 525,
+            "response_http_bytes": 275,
+            "http_bytes": 800
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 551,
+            "response_http_bytes": 275,
+            "http_bytes": 826
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 521,
+            "response_http_bytes": 275,
+            "http_bytes": 796
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 666,
+            "response_http_bytes": 20922,
+            "http_bytes": 21588
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16527,
+            "response_http_bytes": 16426,
+            "http_bytes": 32953
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 7216,
+            "response_body_bytes": 202,
+            "body_bytes": 7418,
+            "request_http_bytes": 7933,
+            "response_http_bytes": 533,
+            "http_bytes": 8466
+          },
+          "POST /v1/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 287,
+            "response_body_bytes": 202,
+            "body_bytes": 489,
+            "request_http_bytes": 906,
+            "response_http_bytes": 508,
+            "http_bytes": 1414
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 11437,
+        "body_bytes": 17838,
+        "request_http_bytes": 14766,
+        "response_http_bytes": 15400,
+        "http_bytes": 30166,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9417,
+            "body_bytes": 9417,
+            "request_http_bytes": 1205,
+            "response_http_bytes": 10070,
+            "http_bytes": 11275
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 13561,
+            "response_http_bytes": 5330,
+            "http_bytes": 18891
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 6,
+      "position": 5,
+      "arm": "D",
+      "cold": {
+        "calls": 12,
+        "request_body_bytes": 23446,
+        "response_body_bytes": 99193,
+        "body_bytes": 122639,
+        "request_http_bytes": 30420,
+        "response_http_bytes": 102798,
+        "http_bytes": 133218,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 3,
+            "request_body_bytes": 0,
+            "response_body_bytes": 53841,
+            "body_bytes": 53841,
+            "request_http_bytes": 1734,
+            "response_http_bytes": 54750,
+            "http_bytes": 56484
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 8206,
+            "body_bytes": 8206,
+            "request_http_bytes": 1184,
+            "response_http_bytes": 8859,
+            "http_bytes": 10043
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 525,
+            "response_http_bytes": 275,
+            "http_bytes": 800
+          },
+          "OPTIONS /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 1042,
+            "response_http_bytes": 550,
+            "http_bytes": 1592
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20619,
+            "body_bytes": 20663,
+            "request_http_bytes": 666,
+            "response_http_bytes": 20922,
+            "http_bytes": 21588
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15899,
+            "response_body_bytes": 16123,
+            "body_bytes": 32022,
+            "request_http_bytes": 16527,
+            "response_http_bytes": 16426,
+            "http_bytes": 32953
+          },
+          "POST /v1/envelopes": {
+            "calls": 2,
+            "request_body_bytes": 7503,
+            "response_body_bytes": 404,
+            "body_bytes": 7907,
+            "request_http_bytes": 8742,
+            "response_http_bytes": 1016,
+            "http_bytes": 9758
+          }
+        }
+      },
+      "warm": {
+        "calls": 22,
+        "request_body_bytes": 6401,
+        "response_body_bytes": 172938,
+        "body_bytes": 179339,
+        "request_http_bytes": 19555,
+        "response_http_bytes": 179680,
+        "http_bytes": 199235,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 10,
+            "request_body_bytes": 0,
+            "response_body_bytes": 161590,
+            "body_bytes": 161590,
+            "request_http_bytes": 5780,
+            "response_http_bytes": 164620,
+            "http_bytes": 170400
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 9328,
+            "body_bytes": 9328,
+            "request_http_bytes": 1184,
+            "response_http_bytes": 9980,
+            "http_bytes": 11164
+          },
+          "POST /v1/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 6401,
+            "response_body_bytes": 2020,
+            "body_bytes": 8421,
+            "request_http_bytes": 12591,
+            "response_http_bytes": 5080,
+            "http_bytes": 17671
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 6401,
+      "delivered": 10
+    },
+    {
+      "block": 6,
+      "position": 6,
+      "arm": "E",
+      "cold": {
+        "calls": 9,
+        "request_body_bytes": 22899,
+        "response_body_bytes": 62565,
+        "body_bytes": 85464,
+        "request_http_bytes": 28348,
+        "response_http_bytes": 65334,
+        "http_bytes": 93682,
+        "routes": {
+          "GET /v1/devices": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 17933,
+            "body_bytes": 17933,
+            "request_http_bytes": 578,
+            "response_http_bytes": 18236,
+            "http_bytes": 18814
+          },
+          "GET /v1/directory": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 222,
+            "body_bytes": 222,
+            "request_http_bytes": 623,
+            "response_http_bytes": 548,
+            "http_bytes": 1171
+          },
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 7494,
+            "body_bytes": 7494,
+            "request_http_bytes": 1205,
+            "response_http_bytes": 8147,
+            "http_bytes": 9352
+          },
+          "OPTIONS /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 525,
+            "response_http_bytes": 275,
+            "http_bytes": 800
+          },
+          "OPTIONS /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 0,
+            "response_body_bytes": 0,
+            "body_bytes": 0,
+            "request_http_bytes": 551,
+            "response_http_bytes": 275,
+            "http_bytes": 826
+          },
+          "POST /v1/bundles/fetch": {
+            "calls": 1,
+            "request_body_bytes": 44,
+            "response_body_bytes": 20605,
+            "body_bytes": 20649,
+            "request_http_bytes": 666,
+            "response_http_bytes": 20908,
+            "http_bytes": 21574
+          },
+          "POST /v1/devices/register": {
+            "calls": 1,
+            "request_body_bytes": 15887,
+            "response_body_bytes": 16109,
+            "body_bytes": 31996,
+            "request_http_bytes": 16515,
+            "response_http_bytes": 16412,
+            "http_bytes": 32927
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 1,
+            "request_body_bytes": 6968,
+            "response_body_bytes": 202,
+            "body_bytes": 7170,
+            "request_http_bytes": 7685,
+            "response_http_bytes": 533,
+            "http_bytes": 8218
+          }
+        }
+      },
+      "warm": {
+        "calls": 12,
+        "request_body_bytes": 20471,
+        "response_body_bytes": 25507,
+        "body_bytes": 45978,
+        "request_http_bytes": 28846,
+        "response_http_bytes": 29471,
+        "http_bytes": 58317,
+        "routes": {
+          "GET /v1/inbox": {
+            "calls": 2,
+            "request_body_bytes": 0,
+            "response_body_bytes": 23487,
+            "body_bytes": 23487,
+            "request_http_bytes": 1205,
+            "response_http_bytes": 24141,
+            "http_bytes": 25346
+          },
+          "POST /v1/directory/envelopes": {
+            "calls": 10,
+            "request_body_bytes": 20471,
+            "response_body_bytes": 2020,
+            "body_bytes": 22491,
+            "request_http_bytes": 27641,
+            "response_http_bytes": 5330,
+            "http_bytes": 32971
+          }
+        }
+      },
+      "warm_envelope_request_bytes": 20471,
+      "delivered": 10
+    }
+  ],
+  "browser": "Chrome/158.0.8127.38"
+}

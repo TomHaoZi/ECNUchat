@@ -1,0 +1,294 @@
+{
+  "browser": "Chrome/158.0.8127.38",
+  "workload": "Two isolated Chromium profiles, one hybrid device each, localhost HTTP/1.1. Both groups enable PQ references. Each group starts with freshly registered profiles. The baseline uses dircache=0 on both clients. The cache group uses production defaults.",
+  "schedule": "Cold first contact runs from adding the friend through the first 128-byte chat form send, receiver decryption and sender receipt. Next, the sender submits ten 128-byte ASCII messages via the chat form on the same confirmed chain with the receiver disconnected. On reconnection the receiver polls once and the sender polls once. Automatic five-second polls are suppressed for repeatability. CORS preflight cache is browser-managed across each group's cold and warm phases.",
+  "accounting": "Counts bytes read from and written to the loopback relay's HTTP streams. Includes request/status lines, query strings, headers, CRLFs, CORS OPTIONS and bodies. Body bytes are checked against HTTP Content-Length. Excludes registration before friend-add, serving PWA assets, DevTools, and TCP/IP/link-layer overhead. The relay uses no TLS or HTTP compression. Only aggregate sizes, counts and route templates are exported. Exact sizes or preflight counts can vary between runs.",
+  "full_directory_per_send": {
+    "cold_first_contact": {
+      "calls": 12,
+      "request_body_bytes": 23446,
+      "response_body_bytes": 99193,
+      "body_bytes": 122639,
+      "request_http_bytes": 30420,
+      "response_http_bytes": 102798,
+      "http_bytes": 133218,
+      "routes": {
+        "GET /v1/devices": {
+          "calls": 3,
+          "request_body_bytes": 0,
+          "response_body_bytes": 53841,
+          "body_bytes": 53841,
+          "request_http_bytes": 1734,
+          "response_http_bytes": 54750,
+          "http_bytes": 56484
+        },
+        "GET /v1/inbox": {
+          "calls": 2,
+          "request_body_bytes": 0,
+          "response_body_bytes": 8206,
+          "body_bytes": 8206,
+          "request_http_bytes": 1184,
+          "response_http_bytes": 8859,
+          "http_bytes": 10043
+        },
+        "OPTIONS /v1/bundles/fetch": {
+          "calls": 1,
+          "request_body_bytes": 0,
+          "response_body_bytes": 0,
+          "body_bytes": 0,
+          "request_http_bytes": 525,
+          "response_http_bytes": 275,
+          "http_bytes": 800
+        },
+        "OPTIONS /v1/envelopes": {
+          "calls": 2,
+          "request_body_bytes": 0,
+          "response_body_bytes": 0,
+          "body_bytes": 0,
+          "request_http_bytes": 1042,
+          "response_http_bytes": 550,
+          "http_bytes": 1592
+        },
+        "POST /v1/bundles/fetch": {
+          "calls": 1,
+          "request_body_bytes": 44,
+          "response_body_bytes": 20619,
+          "body_bytes": 20663,
+          "request_http_bytes": 666,
+          "response_http_bytes": 20922,
+          "http_bytes": 21588
+        },
+        "POST /v1/devices/register": {
+          "calls": 1,
+          "request_body_bytes": 15899,
+          "response_body_bytes": 16123,
+          "body_bytes": 32022,
+          "request_http_bytes": 16527,
+          "response_http_bytes": 16426,
+          "http_bytes": 32953
+        },
+        "POST /v1/envelopes": {
+          "calls": 2,
+          "request_body_bytes": 7503,
+          "response_body_bytes": 404,
+          "body_bytes": 7907,
+          "request_http_bytes": 8742,
+          "response_http_bytes": 1016,
+          "http_bytes": 9758
+        }
+      }
+    },
+    "confirmed_burst_including_delivery": {
+      "calls": 22,
+      "request_body_bytes": 6401,
+      "response_body_bytes": 172938,
+      "body_bytes": 179339,
+      "request_http_bytes": 19555,
+      "response_http_bytes": 179680,
+      "http_bytes": 199235,
+      "routes": {
+        "GET /v1/devices": {
+          "calls": 10,
+          "request_body_bytes": 0,
+          "response_body_bytes": 161590,
+          "body_bytes": 161590,
+          "request_http_bytes": 5780,
+          "response_http_bytes": 164620,
+          "http_bytes": 170400
+        },
+        "GET /v1/inbox": {
+          "calls": 2,
+          "request_body_bytes": 0,
+          "response_body_bytes": 9328,
+          "body_bytes": 9328,
+          "request_http_bytes": 1184,
+          "response_http_bytes": 9980,
+          "http_bytes": 11164
+        },
+        "POST /v1/envelopes": {
+          "calls": 10,
+          "request_body_bytes": 6401,
+          "response_body_bytes": 2020,
+          "body_bytes": 8421,
+          "request_http_bytes": 12591,
+          "response_http_bytes": 5080,
+          "http_bytes": 17671
+        }
+      }
+    },
+    "sender_while_receiver_offline": {
+      "calls": 20,
+      "request_body_bytes": 6401,
+      "response_body_bytes": 163610,
+      "body_bytes": 170011,
+      "request_http_bytes": 18371,
+      "response_http_bytes": 169700,
+      "http_bytes": 188071
+    },
+    "two_inbox_polls_after_reconnection": {
+      "calls": 2,
+      "request_body_bytes": 0,
+      "response_body_bytes": 9328,
+      "body_bytes": 9328,
+      "request_http_bytes": 1184,
+      "response_http_bytes": 9980,
+      "http_bytes": 11164
+    },
+    "delivered_hybrid_reference_messages": 10,
+    "version_guarded_burst_posts": 0,
+    "burst_inbox_responses_with_directory_version": 0
+  },
+  "directory_cache": {
+    "cold_first_contact": {
+      "calls": 11,
+      "request_body_bytes": 23446,
+      "response_body_bytes": 63609,
+      "body_bytes": 87055,
+      "request_http_bytes": 30035,
+      "response_http_bytes": 66959,
+      "http_bytes": 96994,
+      "routes": {
+        "GET /v1/devices": {
+          "calls": 1,
+          "request_body_bytes": 0,
+          "response_body_bytes": 17947,
+          "body_bytes": 17947,
+          "request_http_bytes": 578,
+          "response_http_bytes": 18250,
+          "http_bytes": 18828
+        },
+        "GET /v1/directory": {
+          "calls": 1,
+          "request_body_bytes": 0,
+          "response_body_bytes": 221,
+          "body_bytes": 221,
+          "request_http_bytes": 623,
+          "response_http_bytes": 547,
+          "http_bytes": 1170
+        },
+        "GET /v1/inbox": {
+          "calls": 2,
+          "request_body_bytes": 0,
+          "response_body_bytes": 8295,
+          "body_bytes": 8295,
+          "request_http_bytes": 1205,
+          "response_http_bytes": 8948,
+          "http_bytes": 10153
+        },
+        "OPTIONS /v1/bundles/fetch": {
+          "calls": 1,
+          "request_body_bytes": 0,
+          "response_body_bytes": 0,
+          "body_bytes": 0,
+          "request_http_bytes": 525,
+          "response_http_bytes": 275,
+          "http_bytes": 800
+        },
+        "OPTIONS /v1/directory/envelopes": {
+          "calls": 1,
+          "request_body_bytes": 0,
+          "response_body_bytes": 0,
+          "body_bytes": 0,
+          "request_http_bytes": 551,
+          "response_http_bytes": 275,
+          "http_bytes": 826
+        },
+        "OPTIONS /v1/envelopes": {
+          "calls": 1,
+          "request_body_bytes": 0,
+          "response_body_bytes": 0,
+          "body_bytes": 0,
+          "request_http_bytes": 521,
+          "response_http_bytes": 275,
+          "http_bytes": 796
+        },
+        "POST /v1/bundles/fetch": {
+          "calls": 1,
+          "request_body_bytes": 44,
+          "response_body_bytes": 20619,
+          "body_bytes": 20663,
+          "request_http_bytes": 666,
+          "response_http_bytes": 20922,
+          "http_bytes": 21588
+        },
+        "POST /v1/devices/register": {
+          "calls": 1,
+          "request_body_bytes": 15899,
+          "response_body_bytes": 16123,
+          "body_bytes": 32022,
+          "request_http_bytes": 16527,
+          "response_http_bytes": 16426,
+          "http_bytes": 32953
+        },
+        "POST /v1/directory/envelopes": {
+          "calls": 1,
+          "request_body_bytes": 7216,
+          "response_body_bytes": 202,
+          "body_bytes": 7418,
+          "request_http_bytes": 7933,
+          "response_http_bytes": 533,
+          "http_bytes": 8466
+        },
+        "POST /v1/envelopes": {
+          "calls": 1,
+          "request_body_bytes": 287,
+          "response_body_bytes": 202,
+          "body_bytes": 489,
+          "request_http_bytes": 906,
+          "response_http_bytes": 508,
+          "http_bytes": 1414
+        }
+      }
+    },
+    "confirmed_burst_including_delivery": {
+      "calls": 12,
+      "request_body_bytes": 6401,
+      "response_body_bytes": 11437,
+      "body_bytes": 17838,
+      "request_http_bytes": 14766,
+      "response_http_bytes": 15400,
+      "http_bytes": 30166,
+      "routes": {
+        "GET /v1/inbox": {
+          "calls": 2,
+          "request_body_bytes": 0,
+          "response_body_bytes": 9417,
+          "body_bytes": 9417,
+          "request_http_bytes": 1205,
+          "response_http_bytes": 10070,
+          "http_bytes": 11275
+        },
+        "POST /v1/directory/envelopes": {
+          "calls": 10,
+          "request_body_bytes": 6401,
+          "response_body_bytes": 2020,
+          "body_bytes": 8421,
+          "request_http_bytes": 13561,
+          "response_http_bytes": 5330,
+          "http_bytes": 18891
+        }
+      }
+    },
+    "sender_while_receiver_offline": {
+      "calls": 10,
+      "request_body_bytes": 6401,
+      "response_body_bytes": 2020,
+      "body_bytes": 8421,
+      "request_http_bytes": 13561,
+      "response_http_bytes": 5330,
+      "http_bytes": 18891
+    },
+    "two_inbox_polls_after_reconnection": {
+      "calls": 2,
+      "request_body_bytes": 0,
+      "response_body_bytes": 9417,
+      "body_bytes": 9417,
+      "request_http_bytes": 1205,
+      "response_http_bytes": 10070,
+      "http_bytes": 11275
+    },
+    "delivered_hybrid_reference_messages": 10,
+    "version_guarded_burst_posts": 10,
+    "burst_inbox_responses_with_directory_version": 1
+  }
+}

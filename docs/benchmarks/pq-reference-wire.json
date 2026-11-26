@@ -1,0 +1,640 @@
+{
+  "browser": "Chrome/158.0.8127.38",
+  "body": "128 ASCII bytes; alice and bobby; one device each; new hybrid session per workload",
+  "measurement": "Content-Length of real POST /v1/envelopes UTF-8 request bodies, both directions. Includes x3dh and all ACKs, even a lost ACK. Nonempty inbox response bytes are measured separately from HTTP Content-Length. Excludes other requests, empty polls, HTTP headers, transport framing and compression.",
+  "schedule": "Each data message is received before the sender consumes its ACK (if any). In lost_first_ack only the first ACK is discarded after its POST. For offline cases the receiver is disconnected in Chromium while ten messages queue. Burst totals include all resulting receipts through reconnection. They exclude earlier setup messages and a subsequent delivery probe. offline_burst starts fresh, offline_after_confirmation follows one delivered A-to-B message and its receipt (if enabled), and offline_after_reply additionally follows one delivered B-to-A reply and its receipt.",
+  "cases": {
+    "legacy_same_direction": {
+      "1": {
+        "total_bytes": 6968,
+        "data_bytes": 6968,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 7331,
+        "posts": [
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "2": {
+        "total_bytes": 9015,
+        "data_bytes": 9015,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 9728,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "10": {
+        "total_bytes": 25391,
+        "data_bytes": 25391,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 28904,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 9
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "100": {
+        "total_bytes": 209711,
+        "data_bytes": 209711,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 244724,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 9
+          },
+          {
+            "type": "full",
+            "body_bytes": 2048,
+            "count": 90
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "legacy_alternating": {
+      "1": {
+        "total_bytes": 6968,
+        "data_bytes": 6968,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 7331,
+        "posts": [
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "2": {
+        "total_bytes": 9015,
+        "data_bytes": 9015,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 9728,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "10": {
+        "total_bytes": 25391,
+        "data_bytes": 25391,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 28904,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 9
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "100": {
+        "total_bytes": 209621,
+        "data_bytes": 209621,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 244634,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 99
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "legacy_lost_first_ack": {
+      "1": {
+        "total_bytes": 6968,
+        "data_bytes": 6968,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 7331,
+        "posts": [
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "2": {
+        "total_bytes": 9015,
+        "data_bytes": 9015,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 9728,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      },
+      "10": {
+        "total_bytes": 25391,
+        "data_bytes": 25391,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 28904,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 9
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "legacy_offline_burst": {
+      "10": {
+        "total_bytes": 25391,
+        "data_bytes": 25391,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 28257,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 9
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 6968,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "legacy_offline_after_confirmation": {
+      "10": {
+        "total_bytes": 20471,
+        "data_bytes": 20471,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 23324,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 9
+          },
+          {
+            "type": "full",
+            "body_bytes": 2048,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "legacy_offline_after_reply": {
+      "10": {
+        "total_bytes": 20470,
+        "data_bytes": 20470,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 23323,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 10
+          }
+        ]
+      }
+    },
+    "references_same_direction": {
+      "1": {
+        "total_bytes": 7503,
+        "data_bytes": 7216,
+        "ack_bytes": 287,
+        "nonempty_inbox_response_bytes": 8206,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          }
+        ]
+      },
+      "2": {
+        "total_bytes": 8143,
+        "data_bytes": 7856,
+        "ack_bytes": 287,
+        "nonempty_inbox_response_bytes": 9196,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          },
+          {
+            "type": "reference",
+            "body_bytes": 640,
+            "count": 1
+          }
+        ]
+      },
+      "10": {
+        "total_bytes": 13263,
+        "data_bytes": 12976,
+        "ack_bytes": 287,
+        "nonempty_inbox_response_bytes": 17116,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          },
+          {
+            "type": "reference",
+            "body_bytes": 640,
+            "count": 9
+          }
+        ]
+      },
+      "100": {
+        "total_bytes": 70953,
+        "data_bytes": 70666,
+        "ack_bytes": 287,
+        "nonempty_inbox_response_bytes": 106306,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          },
+          {
+            "type": "reference",
+            "body_bytes": 640,
+            "count": 9
+          },
+          {
+            "type": "reference",
+            "body_bytes": 641,
+            "count": 90
+          }
+        ]
+      }
+    },
+    "references_alternating": {
+      "1": {
+        "total_bytes": 7503,
+        "data_bytes": 7216,
+        "ack_bytes": 287,
+        "nonempty_inbox_response_bytes": 8206,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          }
+        ]
+      },
+      "2": {
+        "total_bytes": 10085,
+        "data_bytes": 9511,
+        "ack_bytes": 574,
+        "nonempty_inbox_response_bytes": 11478,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 2
+          },
+          {
+            "type": "full",
+            "body_bytes": 2295,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          }
+        ]
+      },
+      "10": {
+        "total_bytes": 30741,
+        "data_bytes": 27871,
+        "ack_bytes": 2870,
+        "nonempty_inbox_response_bytes": 37654,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 10
+          },
+          {
+            "type": "full",
+            "body_bytes": 2295,
+            "count": 9
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          }
+        ]
+      },
+      "100": {
+        "total_bytes": 263121,
+        "data_bytes": 234421,
+        "ack_bytes": 28700,
+        "nonempty_inbox_response_bytes": 332134,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 100
+          },
+          {
+            "type": "full",
+            "body_bytes": 2295,
+            "count": 99
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "references_lost_first_ack": {
+      "1": {
+        "total_bytes": 7503,
+        "data_bytes": 7216,
+        "ack_bytes": 287,
+        "nonempty_inbox_response_bytes": 7579,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 1
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 1
+          }
+        ]
+      },
+      "2": {
+        "total_bytes": 15006,
+        "data_bytes": 14432,
+        "ack_bytes": 574,
+        "nonempty_inbox_response_bytes": 15785,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 2
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 2
+          }
+        ]
+      },
+      "10": {
+        "total_bytes": 20126,
+        "data_bytes": 19552,
+        "ack_bytes": 574,
+        "nonempty_inbox_response_bytes": 23705,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 2
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 2
+          },
+          {
+            "type": "reference",
+            "body_bytes": 640,
+            "count": 8
+          }
+        ]
+      }
+    },
+    "references_offline_burst": {
+      "10": {
+        "total_bytes": 75030,
+        "data_bytes": 72160,
+        "ack_bytes": 2870,
+        "nonempty_inbox_response_bytes": 80766,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 10
+          },
+          {
+            "type": "initial_full",
+            "body_bytes": 7216,
+            "count": 10
+          }
+        ]
+      }
+    },
+    "references_offline_after_confirmation": {
+      "10": {
+        "total_bytes": 6401,
+        "data_bytes": 6401,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 9254,
+        "posts": [
+          {
+            "type": "reference",
+            "body_bytes": 640,
+            "count": 9
+          },
+          {
+            "type": "reference",
+            "body_bytes": 641,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "references_offline_after_reply": {
+      "10": {
+        "total_bytes": 25820,
+        "data_bytes": 22950,
+        "ack_bytes": 2870,
+        "nonempty_inbox_response_bytes": 31426,
+        "posts": [
+          {
+            "type": "ack",
+            "body_bytes": 287,
+            "count": 10
+          },
+          {
+            "type": "full",
+            "body_bytes": 2295,
+            "count": 10
+          }
+        ]
+      }
+    }
+  },
+  "confirmed_chat_ui_burst": {
+    "measurement": "Ten sends using the chat form on an established sending chain. The receiver reconnects and fetches once, followed by a sender inbox poll. Counts all relay request and response bodies during the burst, excluding setup, HTTP headers and transport framing.",
+    "legacy": {
+      "all_relay_body_bytes": 207339,
+      "envelopes": {
+        "total_bytes": 20471,
+        "data_bytes": 20471,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 23324,
+        "posts": [
+          {
+            "type": "full",
+            "body_bytes": 2047,
+            "count": 9
+          },
+          {
+            "type": "full",
+            "body_bytes": 2048,
+            "count": 1
+          }
+        ]
+      },
+      "routes": {
+        "GET /v1/devices": {
+          "calls": 10,
+          "request_bytes": 0,
+          "response_bytes": 161450
+        },
+        "POST /v1/envelopes": {
+          "calls": 10,
+          "request_bytes": 20471,
+          "response_bytes": 2020
+        },
+        "GET /v1/inbox": {
+          "calls": 2,
+          "request_bytes": 0,
+          "response_bytes": 23398
+        }
+      }
+    },
+    "references": {
+      "all_relay_body_bytes": 179339,
+      "envelopes": {
+        "total_bytes": 6401,
+        "data_bytes": 6401,
+        "ack_bytes": 0,
+        "nonempty_inbox_response_bytes": 9254,
+        "posts": [
+          {
+            "type": "reference",
+            "body_bytes": 640,
+            "count": 9
+          },
+          {
+            "type": "reference",
+            "body_bytes": 641,
+            "count": 1
+          }
+        ]
+      },
+      "routes": {
+        "GET /v1/devices": {
+          "calls": 10,
+          "request_bytes": 0,
+          "response_bytes": 161590
+        },
+        "POST /v1/envelopes": {
+          "calls": 10,
+          "request_bytes": 6401,
+          "response_bytes": 2020
+        },
+        "GET /v1/inbox": {
+          "calls": 2,
+          "request_bytes": 0,
+          "response_bytes": 9328
+        }
+      }
+    }
+  }
+}
